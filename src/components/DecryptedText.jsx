@@ -179,35 +179,36 @@ export default function DecryptedText({
   ])
 
   useEffect(() => {
-    if (animateOn !== 'view') return
-
+  if (animateOn === 'view') {
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && !hasAnimated) {
-          setIsHovering(true) // trigger the decrypteion
-          setHasAnimated(true) // ensure it runs only once
+          setIsHovering(true);
+          setHasAnimated(true);
         }
-      })
-    }
+      });
+    };
 
-    const observerOptions = {
+    const observer = new IntersectionObserver(observerCallback, {
       root: null,
       rootMargin: '0px',
-      threshold: 0.1,
-    }
+      threshold: 0,
+    });
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions)
-    const currentRef = containerRef.current
-    if (currentRef) {
-      observer.observe(currentRef)
-    }
+    const currentRef = containerRef.current;
+    if (currentRef) observer.observe(currentRef);
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef)
-      }
-    }
-  }, [animateOn, hasAnimated])
+      if (currentRef) observer.unobserve(currentRef);
+    };
+  }
+
+  if (animateOn === 'always' && !hasAnimated) {
+    setIsHovering(true);
+    setHasAnimated(true);
+  }
+}, [animateOn, hasAnimated]);
+
 
   const hoverProps =
     animateOn === 'hover'
