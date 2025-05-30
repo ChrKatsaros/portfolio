@@ -10,7 +10,7 @@ function Info() {
    <div className="info-page">
       <DecryptedText
         text={homeText1}
-        animateOn="view"
+        animateOn="always"
         speed={1}
         revealDirection="start"
         maxIterations={55}
