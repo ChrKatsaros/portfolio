@@ -13,7 +13,7 @@ function Info() {
   animateOn="always"
   speed={30}
   revealDirection="start"
-  maxIterations={50}
+  maxIterations={65}
   className="revealed"
   encryptedClassName="encrypted"
   parentClassName="info-paragraph"
