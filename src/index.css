@@ -1,0 +1,460 @@
+/* ----------------------ANIMATION & ANIMATION PROJECTS CSS--------------------------*/
+.encrypted {
+  color: #888;
+  opacity: 0.5;
+}
+
+
+
+.circular-gallery {
+  width: 100%;
+  max-width: 900px;
+  height: 460px; 
+  position: relative;
+  overflow: visible;
+  cursor: grab;
+ 
+  
+}
+
+.circular-gallery canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  margin: 0 auto;
+  transform-origin: center center;
+}
+
+/*------------------------------------------LAYOUT CSS -------------------------------------*/
+
+/* Reset βασικά */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Neue Montreal'!important;
+  letter-spacing: 0.2rem;
+  background-color: #000000;
+ 
+}
+
+/* Γενικό layout με grid-template-areas */
+.layout {
+  display: grid;
+  grid-template-columns: 72px 1fr;      /* Sidebar στα 80px, υπόλοιπο χώρος για main */
+  grid-template-rows: 1fr 15px;         /* Κύριο ύψος και footer ύψους 30px */
+  grid-template-areas:
+    "sidebar main"
+    "sidebar footer";
+  height: 100vh;
+}
+
+/* Navbar - Sidebar */
+/* Αντιστοιχίζουμε το sidebar στο grid area "sidebar" */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Απαραίτητο για να τοποθετηθεί σωστά το ::after */
+  overflow: hidden;   /* Προληπτικά για να μην ξεφεύγει το animated border */
+}
+
+
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* απόσταση ανάμεσα στα links */
+  
+  
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(158, 158, 158);
+  font-size: 1.2rem;
+  font-weight: 700;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  transition: transform 0.65s ease; /* Διορθώθηκε */
+  padding: 1.5rem;
+}
+
+   .nav-links  a:hover,
+  .nav-links  a.active {
+  transform: rotate(-90deg);
+  color: rgb(0, 0, 0);
+   
+  
+}
+
+/* Main content area */
+/* Το main-content στο grid area "main" */
+.main-content {
+  grid-area: main;                    /* Τοποθετείται στην περιοχή main */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animation + Outlet μέσα στο ίδιο box */
+.animated-background {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 490px; /* Ή ό,τι χρειάζεσαι για Projects */
+}
+
+
+/* Το Threads animation στο φόντο */
+/* Κρατάμε position absolute για να καλύπτει όλο το container */
+.animated-background > canvas,
+.animated-background > div:first-child {
+  position: absolute;
+  top: 1;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Περιεχόμενο της σελίδας (Outlet) */
+.page-content {
+ position: absolute;
+  right: 6.5rem;
+  bottom: 1rem;
+  max-width: 280px;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  z-index: 10;
+  white-space: pre-wrap;
+  display: inline-block;
+  opacity: 75%;
+  font-size: small;
+  font-weight: 100;
+}
+
+.info-page .info-paragraph{
+    font-size: small;
+   letter-spacing:5px;
+   
+    line-height: 1.6;
+  
+}
+
+/* Footer */
+/* Footer στο grid area "footer" */
+.footer {
+  grid-area: footer;          /* Τοποθετείται στην περιοχή footer */
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 0.48rem;
+  opacity: 43%;
+ 
+}
+
+
+
+.name-proffesion{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    position: relative;
+    left: 2rem;
+    top: 0;
+    color: #ffffff;
+    font-size: smaller;
+    margin-bottom: 0;
+    
+    
+}
+
+.name-proffesion h1{
+ padding-top: 0;
+  letter-spacing: 0.7rem;
+}
+.name-proffesion p{
+    top: 0%;
+    margin-top: 0;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+/*--------------------------------NAVBAR CSS ---------------------------------------*/
+
+
+.projects-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-left: 0 !important;
+  box-sizing: border-box;
+}
+
+.projects-links {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center; /* <== Κρατάμε τη στήλη κεντραρισμένη μέσα στο block */
+  padding: 2rem;
+  letter-spacing: 0.7rem;
+}
+
+.projects-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center; /* <== Τα ίδια τα links στοιχίζονται στο κέντρο */
+  text-align: center;   /* <== Αν θες το κείμενο των links centered */
+}
+
+.projects-links li {
+  width: 100%;
+}
+
+.projects-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: 0.3s ease;
+  display: inline-block;
+  padding: 0 1rem; /* <== Αφήνει "ανάσα" δεξιά/αριστερά από το κείμενο */
+}
+
+.projects-links a:hover {
+  color: rgb(139, 137, 137);
+}
+
+
+.projects-links a:hover {
+  color: rgb(139, 137, 137);
+}
+
+.page-fade {
+  animation: fadeScaleIn 3.1s cubic-bezier(0.4, 0, 0.2, 1); /* smooth ease */
+}
+
+@keyframes fadeScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.98) translateY(10px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/*-----------------------------------Contact Page Css------------------------------------------*/
+.contact-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+.contact-page h2 {
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+}
+
+.contact-page p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.contact-info a {
+  color: #eee;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: #e0c245;
+}
+
+
+
+/*-------------------------------RESPONSIVE CSS---------------------------------*/
+
+@media (max-width: 768px) {
+
+  .name-proffesion {
+    font-size: 1.2rem;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Απαραίτητο για να τοποθετηθεί σωστά το ::after */
+    overflow: hidden;   /* Προληπτικά για να μην ξεφεύγει το animated border */
+  }
+
+  .nav-links a {
+    transition: none !important;  /* Καταργεί το animation */
+    transform: rotate(180deg) !important;  /* Κρατάει πάντα την περιστροφή */
+    color: rgb(158, 158, 158); /* Αν θες μπορείς να αλλάξεις χρώμα */
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    transform: rotate(180deg) !important; /* Δεν αλλάζει στο hover */
+    color: rgb(0, 0, 0); /* Αν θες το χρώμα στο hover */
+  }
+
+  .page-content {
+    position: absolute;
+    left: 2rem;
+    right: 2.5rem;
+    bottom: 1.5rem;
+    max-width: 580px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    z-index: 10;
+    white-space: pre-wrap;
+    display: inline-block;
+    opacity: 0.83;
+    font-weight: 100;
+  }
+
+  /* Νέο: flex container για να κρατάει footer κάτω */
+  .projects-page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* To κύριο περιεχόμενο μεγαλώνει και πιάνει το χώρο */
+  .projects-wrapper {
+    flex-grow: 1;
+    flex-direction: column;
+    padding-bottom: 5rem;
+    height: auto;  /* αφαίρεσα το fixed ύψος */
+  }
+
+  .projects-links {
+    width: 100%;
+    padding: 3rem 0;
+    letter-spacing: normal;
+  }
+
+  .projects-links ul {
+    gap: 1.5rem;
+  }
+
+  .projects-links a {
+    font-size: 1.6rem;
+  }
+
+  .circular-gallery {
+    width: 100vw;        /* Πλήρες πλάτος οθόνης */
+    max-width: 100%;     /* Μην ξεπεράσει το 100% πλάτος γονέα */
+    height: auto;        /* Αυτόματο ύψος για να κρατήσει αναλογία */
+    aspect-ratio: 16 / 9; /* Κράτησε το aspect-ratio */
+    max-height: 100vh;    /* Ύψος μέχρι 100% ύψος οθόνης */
+    margin: 0 auto;      /* Κεντράρισμα οριζόντια */
+    display: block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Σιγουρέψου ότι ο footer δεν είναι position absolute/fixed */
+  footer {
+    position: static;
+  }
+
+  .contact-page {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    padding-bottom: 2rem;
+  }
+
+  .contact-page h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-page p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+  }
+
+  .contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: smaller;
+  }
+
+  .contact-info a {
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .contact-info a:hover {
+    color: #e0c245;
+  }
+}
+
