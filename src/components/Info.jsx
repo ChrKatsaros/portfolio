@@ -9,15 +9,16 @@ function Info() {
       
    <div className="info-page">
       <DecryptedText
-        text={homeText1}
-        animateOn="always"
-        speed={1}
-        revealDirection="start"
-        maxIterations={55}
-        className="revealed"
-        encryptedClassName="encrypted"
-        parentClassName="info-paragraph"
-      />
+  text={homeText1}
+  animateOn="always"
+  speed={30}
+  revealDirection="start"
+  maxIterations={50}
+  className="revealed"
+  encryptedClassName="encrypted"
+  parentClassName="info-paragraph"
+/>
+
     </div>
 
 
