@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/drei": "^10.0.8",
     "@react-three/fiber": "^9.1.2",
+    "aos": "^2.3.4",
     "framer-motion": "^12.15.0",
     "ogl": "^1.0.11",
     "react": "^19.1.0",

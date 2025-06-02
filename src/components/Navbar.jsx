@@ -1,17 +1,54 @@
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
+import listSvg from "../assets/list.svg";
+import DropdownMenu from './DropDownMenu';
 
 function Navbar() {
-  
-  return (
-    <nav className="nav-links">
-      <NavLink to="/"       className={({ isActive }) => isActive ? 'active' : ''}>{({ isActive }) => isActive ? '●' : 'Home'}</NavLink>
-      <NavLink to="/info"   className={({ isActive }) => isActive ? 'active' : ''}>{({ isActive }) => isActive ? '●' : 'Info'}</NavLink>
-      <NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''}>{({ isActive }) => isActive ? '●' : 'Projects'}</NavLink>
-      <NavLink to="/contact"  className={({ isActive }) => isActive ? 'active' : ''}>{({ isActive }) => isActive ? '●' : 'Contact'}</NavLink>
-      
-    </nav>
+  const [isOpen, setIsOpen] = useState(false);
 
-    
+  function toggleDropdown() {
+    setIsOpen(!isOpen);
+  }
+
+  function closeDropdown() {
+    setIsOpen(false);
+  }
+
+  return (
+  <nav className="navbar">
+  <div className="logo" title="Go to top">
+    <img src="/favicon.ico" alt="Logo" />
+  </div>
+
+  {/* ΜΟΝΟ το hamburger, τελείως δεξιά */}
+  <div className="dropdown-wrapper">
+    <img
+      src={listSvg}
+      onClick={toggleDropdown}
+      className="hamburger-button"
+      alt="Menu"
+    />
+  </div>
+
+  {/* Αυτά κρύβονται σε κινητό */}
+  <div className="nav-links">
+    <ul className="main-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+
+    <ul className="favicons">
+      <li><a href="https://github.com/ChrKatsaros" target="_blank"><FaGithub /></a></li>
+      <li><a href="mailto:chr.katsaros99@gmail.com"><FaEnvelope /></a></li>
+      <li><a href="tel:+306947193918"><FaPhone /></a></li>
+    </ul>
+  </div>
+
+  <DropdownMenu isOpen={isOpen} onClose={closeDropdown} />
+</nav>
+
   );
 }
+
 export default Navbar;

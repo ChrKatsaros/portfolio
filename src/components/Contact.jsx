@@ -1,26 +1,37 @@
 import React from 'react';
 import { FaEnvelope, FaPhoneAlt, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
+import contactIMG from '../assets/contact.jpg';
 
 function Contact() {
   return (
-    <section className="contact-page">
-      <h2>Contact Me</h2>
-      <p>I'm always open to new opportunities, collaborations or freelance work. Feel free to reach out!</p>
+    <section className="contact-container">
+      {/* Αριστερά: Τίτλος + Πληροφορίες */}
+      <div className="contact-left" data-aos="fade-right" data-aos-delay="200">
+        <h1 className="contact-title">Keep in Touch.</h1>
+        <p className="contact-description">
+          I'm always open to new opportunities, collaborations or freelance work. Feel free to reach out!
+        </p>
 
-      <ul className="contact-info">
-        <li>
-          <FaEnvelope /> <a href="mailto:chr.katsaros99@gmail.com">chr.katsaros99@gmail.com</a>
-        </li>
-        <li>
-          <FaPhoneAlt /> <span>+30 6947 199 318</span>
-        </li>
-        <li>
-          <FaGithub /> <a href="https://github.com/ChrKatsaros" target="_blank" rel="noreferrer">github.com/ChrKatsaros</a>
-        </li>
-        <li>
-          <FaMapMarkerAlt /> <span>Athens, Greece</span>
-        </li>
-      </ul>
+        <ul className="contact-info">
+          <li data-aos="fade-up" data-aos-delay="300">
+            <FaEnvelope /> <a href="mailto:chr.katsaros99@gmail.com">chr.katsaros99@gmail.com</a>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="400">
+            <FaPhoneAlt /> <span>+30 6947 199 318</span>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="500">
+            <FaGithub /> <a href="https://github.com/ChrKatsaros" target="_blank" rel="noreferrer">github.com/ChrKatsaros</a>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="600">
+            <FaMapMarkerAlt /> <span>Athens, Greece</span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Δεξιά: Εικόνα */}
+      <div className="contact-right" data-aos="fade-left" data-aos-delay="400">
+        <img src={contactIMG} alt="Contact" />
+      </div>
     </section>
   );
 }

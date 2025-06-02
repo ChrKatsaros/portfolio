@@ -1,29 +1,17 @@
-import React from 'react'
-import DecryptedText from './DecryptedText'
-import {homeText1} from './HomePageText';
-
+import React from 'react';
+import AboutIMG from '../assets/AboutIMG.jpeg';
+import { homeText1 } from './HomePageText';
 
 function Info() {
-  return (
-    <div >
-      
-   <div className="info-page">
-      <DecryptedText
-        text={homeText1}
-        animateOn="view"
-        speed={1}
-        revealDirection="start"
-        maxIterations={55}
-        className="revealed"
-        encryptedClassName="encrypted"
-        parentClassName="info-paragraph"
-      />
+ return (
+    <div className="info-container" data-aos="fade-right" data-aos-delay="200">
+      <h1 className="info-title">About.</h1>
+      <p className="info-text">
+        <img src={AboutIMG} alt="About" className="about-image" />
+        {homeText1}
+      </p>
     </div>
-
-
-      </div>
-    
-  )
+  );
 }
 
-export default Info
+export default Info;

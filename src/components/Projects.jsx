@@ -1,19 +1,46 @@
 import React from 'react';
-import CircularGallery from './CircularGallery';
+import projects from './ProjectList'; // σωστό import
 
 function Projects() {
   return (
     <div className="projects-wrapper">
-      <div className="projects-links">
-        <ul>
-          <li><a href="https://voile-store-project.onrender.com/" target="_blank" rel="noreferrer">Voile</a></li>
-          <li><a href="https://calcwise.onrender.com/" target="_blank" rel="noreferrer"> CalcWise</a></li>
-          <li><a href="https://inoteapp-frontend.onrender.com/" target="_blank" rel="noreferrer">i-Notes </a></li>
-        </ul>
-      </div>
-
-      <div className="circular-gallery">
-        <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} />
+      <h1 className="projects-title" data-aos="fade-down" data-aos-delay="100">
+        Projects.
+      </h1>
+      <div className="projects-line" data-aos="fade-in" data-aos-delay="200" />
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <div
+            className="project-card"
+            key={index}
+            data-aos="fade-up"
+            data-aos-delay={100 + index * 150} // σταδιακό delay για το κάθε project
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              className="project-img"
+              data-aos="zoom-in"
+              data-aos-delay={150 + index * 150}
+            />
+            <h2 className="project-name" data-aos="fade-right" data-aos-delay={200 + index * 150}>
+              {project.title}
+            </h2>
+            <p className="project-desc" data-aos="fade-left" data-aos-delay={250 + index * 150}>
+              {project.description}
+            </p>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className="project-link"
+              data-aos="fade-up"
+              data-aos-delay={300 + index * 150}
+            >
+              See Live →
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );

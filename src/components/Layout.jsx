@@ -1,43 +1,38 @@
-import React from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
-import Navbar from "./Navbar";
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+import Navbar from './Navbar';
 import Footer from './Footer';
-import Threads from './Threads';
+import Home from './Home';
+import Info from './Info';
+import Projects from './Projects';
+import Contact from './Contact';
 
 function Layout() {
-  const location = useLocation();
-  const showThreads = location.pathname !== '/projects';
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // χρόνος animation σε ms
+      once: true,    // animation και κάθε φορά που κάνεις scroll ξανά
+    });
+  }, []);
 
   return (
     <div className="layout">
-      <aside className="sidebar">
+      <header>
         <Navbar />
-      </aside>
+      </header>
 
-      <div className="main-content">
-        <div className='name-proffesion'>
-          <h1>Chris Katsaros</h1>
-          <p>Junior Web Developer</p>
-        </div>
+      <main className="page-content">
+        <section id="home"><Home /></section>
+        <section id="about"><Info /></section>
+        <section id="projects"><Projects /></section>
+        <section id="contact"><Contact /></section>
+      </main>
 
-        {showThreads && (
-          <div className="animated-background">
-            <Threads amplitude={1} distance={0} enableMouseInteraction={true} />
-          </div>
-        )}
-
-        {/* Main outlet πάντα εμφανίζεται */}
-        <main className={showThreads ? "page-content" : "projects-wrapper"}> {/* Αλλαζει η κλαση οταν παει στο projects ωσετ να λειτουργει σωστα*/ }
-         <div key={location.pathname} className={location.pathname !== '/' ? 'page-fade' : ''}>
-  <Outlet />
-</div>
-
-        </main>
-
-        <footer className="footer">
-          <Footer />
-        </footer>
-      </div>
+      <footer className="footer">
+        <Footer />
+      </footer>
     </div>
   );
 }

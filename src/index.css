@@ -1,460 +1,699 @@
-/* ----------------------ANIMATION & ANIMATION PROJECTS CSS--------------------------*/
-.encrypted {
-  color: #888;
-  opacity: 0.5;
-}
-
-
-
-.circular-gallery {
-  width: 100%;
-  max-width: 900px;
-  height: 460px; 
-  position: relative;
-  overflow: visible;
-  cursor: grab;
- 
-  
-}
-
-.circular-gallery canvas {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-  margin: 0 auto;
-  transform-origin: center center;
-}
-
-/*------------------------------------------LAYOUT CSS -------------------------------------*/
-
-/* Reset βασικά */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Neue Montreal'!important;
-  letter-spacing: 0.2rem;
-  background-color: #000000;
- 
+  font-family: Arial, sans-serif;
+
+  color: #222; /* βασικό χρώμα κειμένου */
+  font-family: 'Poppins', sans-serif;
+
 }
 
-/* Γενικό layout με grid-template-areas */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/*------------------------------------------LAYOUT CSS--------------------------------------*/
+
 .layout {
-  display: grid;
-  grid-template-columns: 72px 1fr;      /* Sidebar στα 80px, υπόλοιπο χώρος για main */
-  grid-template-rows: 1fr 15px;         /* Κύριο ύψος και footer ύψους 30px */
-  grid-template-areas:
-    "sidebar main"
-    "sidebar footer";
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  /* ώστε το footer να πάει κάτω στην οθόνη */
 }
 
-/* Navbar - Sidebar */
-/* Αντιστοιχίζουμε το sidebar στο grid area "sidebar" */
-.sidebar {
-  grid-area: sidebar;
-  background-color: #ffffff;
+.navbar {
+  background-color: #111111;
+  color: white;
+  padding: 20px 100px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative; /* Απαραίτητο για να τοποθετηθεί σωστά το ::after */
-  overflow: hidden;   /* Προληπτικά για να μην ξεφεύγει το animated border */
 }
-
-
 
 .nav-links {
   display: flex;
-  flex-direction: column;
-  gap: 20px; /* απόσταση ανάμεσα στα links */
-  
-  
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: rgb(158, 158, 158);
-  font-size: 1.2rem;
-  font-weight: 700;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  text-align: center;
-  transition: transform 0.65s ease; /* Διορθώθηκε */
-  padding: 1.5rem;
-}
-
-   .nav-links  a:hover,
-  .nav-links  a.active {
-  transform: rotate(-90deg);
-  color: rgb(0, 0, 0);
-   
-  
-}
-
-/* Main content area */
-/* Το main-content στο grid area "main" */
-.main-content {
-  grid-area: main;                    /* Τοποθετείται στην περιοχή main */
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Animation + Outlet μέσα στο ίδιο box */
-.animated-background {
-  flex: 1;
-  position: relative;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  min-height: 490px; /* Ή ό,τι χρειάζεσαι για Projects */
+  justify-content: flex-end;  /* να πάνε αριστερά */
+  flex-grow: 1;                  /* να πάρει όλο τον διαθέσιμο χώρο */
+  gap: 3rem;                    /* απόσταση ανάμεσα στα nav links (groups) */
 }
 
-
-/* Το Threads animation στο φόντο */
-/* Κρατάμε position absolute για να καλύπτει όλο το container */
-.animated-background > canvas,
-.animated-background > div:first-child {
-  position: absolute;
-  top: 1;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-/* Περιεχόμενο της σελίδας (Outlet) */
-.page-content {
- position: absolute;
-  right: 6.5rem;
-  bottom: 1rem;
-  max-width: 280px;
-  color: rgb(255, 255, 255);
-  text-align: left;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.7;
-  z-index: 10;
-  white-space: pre-wrap;
-  display: inline-block;
-  opacity: 75%;
-  font-size: small;
-  font-weight: 100;
-}
-
-.info-page .info-paragraph{
-    font-size: small;
-   letter-spacing:5px;
-   
-    line-height: 1.6;
-  
-}
-
-/* Footer */
-/* Footer στο grid area "footer" */
-.footer {
-  grid-area: footer;          /* Τοποθετείται στην περιοχή footer */
-  height: auto;
+/* Τα δύο <ul> είναι μέσα στο .nav-links, οπότε το gap το βάζουμε στο .nav-links */
+.nav-links ul {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000000;
-  color: #ffffff;
-  font-size: 0.48rem;
-  opacity: 43%;
- 
-}
-
-
-
-.name-proffesion{
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    position: relative;
-    left: 2rem;
-    top: 0;
-    color: #ffffff;
-    font-size: smaller;
-    margin-bottom: 0;
-    
-    
-}
-
-.name-proffesion h1{
- padding-top: 0;
-  letter-spacing: 0.7rem;
-}
-.name-proffesion p{
-    top: 0%;
-    margin-top: 0;
-    font-size: 0.9rem;
-    font-style: italic;
-    margin-bottom: 0;
-}
-
-/*--------------------------------NAVBAR CSS ---------------------------------------*/
-
-
-.projects-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  padding-left: 0 !important;
-  box-sizing: border-box;
-}
-
-.projects-links {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  justify-content: center; /* <== Κρατάμε τη στήλη κεντραρισμένη μέσα στο block */
-  padding: 2rem;
-  letter-spacing: 0.7rem;
-}
-
-.projects-links ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  
+}
+
+/* Απόσταση μεταξύ των li μέσα στα nav links */
+.nav-links ul.main-links li {
+  margin-right: 3rem; /* Απόσταση μεταξύ των κειμένων */
+}
+
+.nav-links ul.main-links li:last-child {
+  margin-right: 0; /* Τελευταίο χωρίς margin δεξιά */
+}
+
+.nav-links a,
+.favicons a {
+  color: white;             /* Λευκό χρώμα κειμένου */
+  text-decoration: none;    /* Χωρίς υπογράμμιση */
+  font-style: normal;       /* Αν θες να αφαιρέσεις italics */
+  transition: 0.15s ease-in;
+}
+
+/* Προαιρετικά για hover (να δείχνει ότι είναι clickable) */
+.nav-links a:hover,
+.favicons a:hover {
+  color: #797979;/* ή άλλο εφέ που θέλεις */
+  cursor: pointer;
+}
+
+
+/* Favicons (μικρή απόσταση μεταξύ τους) */
+.favicons li {
+  margin-left: 3rem; /* Μικρή απόσταση ανάμεσα στα icons */
+}
+
+.favicons li:first-child {
+  margin-left: 1; /* Πρώτο icon χωρίς αριστερό margin */
+}
+
+.favicons a {
+  font-size: 1.7rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* να πάνε αριστερά */
+  flex-grow: 1;                  /* να πάρει όλο τον διαθέσιμο χώρο */
+  gap: 3rem;  
+  cursor: pointer;
+}
+.logo img {
+  background-color: white; /* Λευκό background */
+  border-radius: 50%;      /* Κάνει το στοιχείο στρογγυλό */
+  padding: 4px;            /* Προαιρετικό, για να μην ακουμπάει το image τις άκρες */
+  width: 50px;             /* Μπορείς να ρυθμίσεις το μέγεθος όπως θες */
+  height: 50px;
+  object-fit: contain;     /* Για να κρατάει τις αναλογίες του εικόνας */
+}
+.logo img:hover {
+  cursor: pointer;
+  filter: brightness(0.5); /* Σκουραίνει λίγο την εικόνα */
+  transition: filter 0.35s ease;
+}
+
+
+
+.page-content {
+  flex: 1;               /* για να γεμίζει όλο το διαθέσιμο ύψος */
+  
+}
+
+.footer {
+  position: relative;
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  overflow: visible; /* πολύ σημαντικό! */
+}
+
+.scroll-half-circle {
+  position: absolute;
+  top: -40px; /* το κάνει να "βγαίνει" από το footer */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background-color: #000000;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  /* Κρύβει το κάτω μισό του κύκλου */
+  clip-path: inset(0 0 50% 0); /* εμφανίζει μόνο το πάνω μισό */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
+}
+.scroll-half-circle p{
+  position: relative;
+  bottom:14px
+}
+
+.scroll-half-circle:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+
+/*----------------------------------                ------------------------------------------*/
+.header-container {
+  position: relative;
+  width: 100%;
+  height: 730px; /* ή ό,τι ύψος θέλεις */
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.header-bg {
+  position: absolute;
+  top:0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  align-items: center; /* <== Τα ίδια τα links στοιχίζονται στο κέντρο */
-  text-align: center;   /* <== Αν θες το κείμενο των links centered */
+  height: 100%;
+  padding: 45px;
+  color: black;
+  justify-content: center;
+  bottom: 10px;
+  cursor: pointer;
 }
 
-.projects-links li {
-  width: 100%;
+.header-titles-row {
+  display: flex;
+  justify-content: space-between; /* αριστερά και δεξιά */
+  align-items: flex-start; /* ώστε οι παράγραφοι να ξεκινούν από πάνω */
 }
 
-.projects-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.4rem;
-  transition: 0.3s ease;
-  display: inline-block;
-  padding: 0 1rem; /* <== Αφήνει "ανάσα" δεξιά/αριστερά από το κείμενο */
+/* Blocks για κάθε side, για σωστή κάθετη στοίχιση */
+.header-left-block,
+.header-right-block {
+  display: flex;
+  flex-direction: column;
+  max-width: 270px; /* ίδιο πλάτος για ομοιομορφία */
 }
 
-.projects-links a:hover {
-  color: rgb(139, 137, 137);
+/* Στυλ για τους τίτλους */
+.header-left-title,
+.header-right-title {
+  font-size: 2.1rem;
+  white-space: nowrap;
+
+  font-weight: bold;
+  margin: 0 0 10px 0; /* λίγο κενό από κάτω */
+  color: #474747;
+}
+
+/* Στυλ για το αριστερό paragraph */
+.home-paragraph {
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: #6e6e6e;
+  line-height: 2.3rem;
+  max-width: 270px;
+}
+
+/* Στυλ για το δεξί paragraph */
+.home-paragraph-right {
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: #6e6e6e;
+  line-height: 2rem;
+  max-width: 270px;
 }
 
 
-.projects-links a:hover {
-  color: rgb(139, 137, 137);
-}
-
-.page-fade {
-  animation: fadeScaleIn 3.1s cubic-bezier(0.4, 0, 0.2, 1); /* smooth ease */
-}
-
-@keyframes fadeScaleIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.98) translateY(10px);
-    filter: blur(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    filter: blur(0);
-  }
-}
-
-/*-----------------------------------Contact Page Css------------------------------------------*/
-.contact-page {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0.9rem 1.5rem;
+.cv-download-button {
+  display: flex;
+  justify-content: center;
   text-align: center;
-  color: white;
+  align-items: center;
+  margin-top: 15px;
+  padding: 5px 10px;
+  background-color: #af1f1f;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  width: 120px;
 }
 
-.contact-page h2 {
-  font-size: 2.3rem;
+.cv-download-button:hover {
+  background-color: #2e2e2e;
+}
+
+
+.info-container {
+  max-width: 1000px; /* Περιορίζουμε το πλάτος ώστε να φαίνεται ωραία σε desktop */
+  margin: 0 auto;    /* Κεντράρουμε το container */
+  padding: 40px 20px;
+}
+
+.info-title {
+  font-size: 3rem;
+  margin-bottom: 2rem; 
+  color: #1c1c1c;
+}
+
+.info-text {
+  font-size: 1.5rem;
+  line-height: 2.5rem; 
+  color: #333;
+  overflow: hidden; /* Για να "καθαρίσει" το float και να τυλίγει σωστά */
+}
+
+.about-image {
+  float: right;
+  width: 45%; /* Λίγο πιο μικρή εικόνα για να χωράει το κείμενο */
+  max-width: 450px; /* Όριο στο μέγιστο πλάτος */
+  margin: 0 0 15px 20px; /* Αριστερό περιθώριο ώστε το κείμενο να μην κολλάει */
+  border-radius: 10px;
+  shape-outside: inset(0);
+  object-fit: cover;
+}
+
+
+
+/*--------------------------------------------PROJECTS CSS--------------------------------------*/
+.projects-wrapper {
+  padding: 0;
+  
+  text-align: center;
+}
+
+.projects-title {
+  font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 2rem;
 }
 
-.contact-page p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  color: #ccc;
+.projects-line {
+  width: 100px;
+  height: 3px;
+  background-color: #000;
+  margin: 0 auto 40px auto;
+  border-radius: 2px;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.project-card {
+  background: #fff;
+  padding: 40px;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
+  transition: transform 0.2s ease !important;
+}
+
+.project-card:hover {
+  transform: translateY(-5px) !important;
+}
+
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-name {
+  margin: 15px 0 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 12px;
+  min-height: 60px;
+}
+
+.project-link {
+  font-size: 0.9rem;
+  color: #5e5e5e;
+  text-decoration: none;
+  font-weight: 900;
+  transition: transform 0.3s ease, text-decoration 0.1s ease !important;
+  display: inline-block;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+  transform: scale(1.1) !important;
+  
+}
+
+
+/*--------------------------------CONTACTS CSS----------------------------------------*/
+
+.contact-container {
+  display: flex; /* Τοποθετεί τα παιδιά του οριζόντια (δίπλα-δίπλα) */
+  flex-wrap: wrap; /* Επιτρέπει να "σπάνε" σε νέα γραμμή σε μικρές οθόνες */
+  padding: 150px 100px; /* Εσωτερικό περιθώριο πάνω/κάτω και δεξιά/αριστερά */
+  background-color: #ffffff; /* Λευκό φόντο */
+  gap: 3rem; /* Απόσταση ανάμεσα στις δύο στήλες */
+  align-items: center; /* Κάθετη στοίχιση στο κέντρο */
+}
+
+.contact-left {
+  flex: 1; /* Καταλαμβάνει ίσο πλάτος με το δεξί div */
+  min-width: 300px; /* Όριο στο πόσο μικρό μπορεί να γίνει */
+}
+
+.contact-title {
+  font-size: 2.8rem; /* Μέγεθος τίτλου */
+  color: #222; /* Σκούρο γκρι χρώμα */
+  margin-bottom: 20px; /* Κάθετο περιθώριο κάτω από τον τίτλο */
+}
+
+.contact-description {
+  font-size: 1.5rem; /* Μεγαλύτερο μέγεθος γραμματοσειράς για την περιγραφή */
+  margin-bottom: 25px; /* Κάθετο περιθώριο κάτω από την περιγραφή */
+  color: #555; /* Γκρι χρώμα για το κείμενο */
+  max-width: 500px; /* Μέγιστο πλάτος της παραγράφου */
+  line-height: 1.6; /* Ύψος γραμμής για καλύτερη αναγνωσιμότητα */
 }
 
 .contact-info {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
+  list-style: none; /* Αφαιρεί τα bullets από τη λίστα */
+  padding: 0; /* Αφαιρεί προεπιλεγμένο εσωτερικό περιθώριο */
+  font-size: 1rem; /* Κανονικό μέγεθος γραμματοσειράς */
+  color: #333; /* Σκούρο γκρι χρώμα για το κείμενο */
 }
 
 .contact-info li {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
+  margin-bottom: 15px; /* Κάθετο περιθώριο ανάμεσα στα στοιχεία επικοινωνίας */
+  display: flex; /* Τοποθετεί εικονίδιο και κείμενο οριζόντια */
+  align-items: center; /* Κάθετη στοίχιση στο κέντρο */
+  gap: 10px; /* Απόσταση ανάμεσα στο εικονίδιο και το κείμενο */
 }
 
 .contact-info a {
-  color: #eee;
-  text-decoration: none;
-  transition: color 0.3s;
+  color: #000; /* Μαύρο χρώμα στα links */
+  text-decoration: none; /* Αφαίρεση της υπογράμμισης */
+  transition: color 0.2s ease; /* Ομαλή αλλαγή χρώματος στο hover */
 }
 
 .contact-info a:hover {
-  color: #e0c245;
+  color: #929090; /* Πιο ανοιχτό γκρι όταν περνάει το ποντίκι */
+}
+
+.contact-right {
+  flex: 1; /* Καταλαμβάνει ίδιο πλάτος με το αριστερό div */
+  min-width: 300px; /* Όριο στο πόσο μικρό μπορεί να γίνει */
+  display: flex; /* Χρήση flexbox για στοίχιση της εικόνας */
+  justify-content: center; /* Κεντράρει οριζόντια την εικόνα */
+}
+
+.contact-right img {
+  width: 100%; /* Κάνει την εικόνα να πιάνει όλο το πλάτος του container */
+  max-width: 450px; /* Όριο στο μέγιστο πλάτος της εικόνας */
+  height: auto; /* Διατηρεί τη σωστή αναλογία διαστάσεων */
+  object-fit: cover; /* Κόβει την εικόνα ώστε να γεμίσει σωστά το container */
+}
+
+/* === Burger Icon === */
+.hamburger-button {
+  width: 35px;
+  height: 45px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  filter: invert(1); /* Κάνει το μαύρο burger λευκό αν το background είναι σκοτεινό */
 }
 
 
 
-/*-------------------------------RESPONSIVE CSS---------------------------------*/
+@media (min-width:769px){
+/* === Dropdown Wrapper (θέση του burger icon) === */
+.dropdown-wrapper {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1002;
+  display: none;
+}
+
+.dropdown-menu{
+  display: none;
+}
+}
+
+
+/*-----------------------------------MOBILES CSS------------------------------------------------*/
 
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }   
 
-  .name-proffesion {
-    font-size: 1.2rem;
+   .info-container {
+    padding-left: 5vw;
+    padding-right: 0;
+    padding-top: 60px;
+    max-width: 95vw;
+  }
+  .contact-container {
+    flex-direction: column; /* Στοίχιση κάθετα */
+    padding: 60px 5vw;      /* Μικρότερα padding για κινητά */
+    gap: 2rem;              /* Μικρότερο κενό μεταξύ στοιχείων */
   }
 
-  .sidebar {
-    grid-area: sidebar;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; /* Απαραίτητο για να τοποθετηθεί σωστά το ::after */
-    overflow: hidden;   /* Προληπτικά για να μην ξεφεύγει το animated border */
+  .contact-left,
+  .contact-right {
+    flex: none;             /* Αφαίρεση ευελιξίας για σταθερό μέγεθος */
+    width: 100%;            /* Πλήρες πλάτος */
+    min-width: auto;        /* Αφαίρεση min-width */
   }
 
-  .nav-links a {
-    transition: none !important;  /* Καταργεί το animation */
-    transform: rotate(180deg) !important;  /* Κρατάει πάντα την περιστροφή */
-    color: rgb(158, 158, 158); /* Αν θες μπορείς να αλλάξεις χρώμα */
+  .contact-title {
+    font-size: 1.8rem;      /* Μικρότερος τίτλος */
+    margin-bottom: 15px;
   }
 
-  .nav-links a:hover,
-  .nav-links a.active {
-    transform: rotate(180deg) !important; /* Δεν αλλάζει στο hover */
-    color: rgb(0, 0, 0); /* Αν θες το χρώμα στο hover */
-  }
-
-  .page-content {
-    position: absolute;
-    left: 2rem;
-    right: 2.5rem;
-    bottom: 1.5rem;
-    max-width: 580px;
-    color: rgb(255, 255, 255);
-    text-align: left;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    line-height: 1.7;
-    z-index: 10;
-    white-space: pre-wrap;
-    display: inline-block;
-    opacity: 0.83;
-    font-weight: 100;
-  }
-
-  /* Νέο: flex container για να κρατάει footer κάτω */
-  .projects-page-wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* To κύριο περιεχόμενο μεγαλώνει και πιάνει το χώρο */
-  .projects-wrapper {
-    flex-grow: 1;
-    flex-direction: column;
-    padding-bottom: 5rem;
-    height: auto;  /* αφαίρεσα το fixed ύψος */
-  }
-
-  .projects-links {
-    width: 100%;
-    padding: 3rem 0;
-    letter-spacing: normal;
-  }
-
-  .projects-links ul {
-    gap: 1.5rem;
-  }
-
-  .projects-links a {
-    font-size: 1.6rem;
-  }
-
-  .circular-gallery {
-    width: 100vw;        /* Πλήρες πλάτος οθόνης */
-    max-width: 100%;     /* Μην ξεπεράσει το 100% πλάτος γονέα */
-    height: auto;        /* Αυτόματο ύψος για να κρατήσει αναλογία */
-    aspect-ratio: 16 / 9; /* Κράτησε το aspect-ratio */
-    max-height: 100vh;    /* Ύψος μέχρι 100% ύψος οθόνης */
-    margin: 0 auto;      /* Κεντράρισμα οριζόντια */
-    display: block;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  /* Σιγουρέψου ότι ο footer δεν είναι position absolute/fixed */
-  footer {
-    position: static;
-  }
-
-  .contact-page {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-    color: white;
-    padding-bottom: 2rem;
-  }
-
-  .contact-page h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .contact-page p {
-    font-size: 1.4rem;
-    margin-bottom: 2rem;
-    color: #ccc;
+  .contact-description {
+    font-size: 1rem;        /* Μικρότερο κείμενο */
+    max-width: 100%;        /* Πλήρες πλάτος */
+    margin-bottom: 20px;
+    line-height: 1.5;
   }
 
   .contact-info {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 1.1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
+    font-size: 0.9rem;      /* Μικρότερη γραμματοσειρά */
   }
 
   .contact-info li {
+    margin-bottom: 12px;
+  }
+
+  .contact-right {
+    justify-content: center; /* Κέντρο οριζόντια */
+    margin-top: 20px;        /* Κενό πάνω από την εικόνα */
+  }
+
+  .contact-right img {
+    max-width: 70%;        /* Εικόνα πιάνει όλο το πλάτος container */
+    height: auto;
+    object-fit: contain;    /* Να μην κόβεται η εικόνα */
+    border-radius: 10px;
+    position: relative;
+    left: 80px;
+    bottom: 100px;
+  }
+  .info-title {
+    font-size: 2.7rem;
+    margin-bottom: 0rem;
+    color: #1c1c1c;
+  }
+
+  .info-text {
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+    color: #333;
+  }
+
+  .about-image {
+    float: right;
+    width: 55%;      /* Μεγαλύτερο μέγεθος εικόνας */
+    margin: 0 0 10px 15px;  /* Αριστερό κενό για το κείμενο να μην κολλάει */
+    border-radius: 10px;
+    shape-outside: inset(0); /* Βοηθά για καλύτερο wrap effect σε ορισμένους browsers */
+  }
+
+.header-container {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+  }
+
+  .header-content {
+    position: relative;
+    z-index: 2;
     display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: smaller;
+    flex-direction: column;
+    height: 100%;
+    padding: 23px 4vw;
+    color: black;
+    justify-content: center;
   }
 
-  .contact-info a {
-    color: #eee;
+  .header-titles-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .header-left-block,
+  .header-right-block {
+    display: flex;
+    flex-direction: column;
+    max-width: 45vw;
+  }
+
+  .header-left-title,
+  .header-right-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+    color: #202020;
+  }
+
+  .home-paragraph,
+  .home-paragraph-right {
+    font-size: 0.7rem;
+    line-height: 1.4rem;
+    color: #3b3a3a;
+    margin-top: 0;
+  }
+
+  .home-paragraph {
+    text-align: left;
+  }
+
+  .home-paragraph-right {
+    text-align: right;
+  }
+
+  .cv-download-button {
+    width: 90px;
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    margin-top: 8px;
+    background-color: #af1f1f;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
     text-decoration: none;
-    transition: color 0.3s;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    align-self: flex-end;
   }
 
-  .contact-info a:hover {
-    color: #e0c245;
+  .cv-download-button:hover {
+    background-color: #2e2e2e;
   }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5vw;
+  }
+
+  /* Απόκρυψη desktop nav σε κινητό */
+  .nav-links {
+    display: none;
+  }
+
+  /* Burger εμφανίζεται μόνο σε mobile */
+  .dropdown-wrapper {
+    display: block;
+  }
+
+  /* Dropdown menu */
+  .dropdown-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    background-color: #111;
+    z-index: 1000;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .dropdown-menu.open {
+    transform: translateY(0);
+  }
+
+  .main-links-mobile,
+  .favicons-mobile {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-links-mobile li {
+    margin-bottom: 1.5rem;
+  }
+
+  .main-links-mobile a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  .favicons-mobile {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .favicons-mobile a {
+    font-size: 1.8rem;
+    color: white;
+  }
+
+  .hamburger-button {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    filter: invert(1);
+    z-index: 1100;
+    position: relative;
+  }
+
+  .projects-title {
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 0px;
 }
-
+}
