@@ -16,19 +16,21 @@ function Navbar() {
 
   return (
   <nav className="navbar">
-  <div className="logo" title="Go to top">
+  <div className="logo" >
     <img src="/favicon.ico" alt="Logo" />
   </div>
 
   {/* ΜΟΝΟ το hamburger, τελείως δεξιά */}
-  <div className="dropdown-wrapper">
-    <img
-      src={listSvg}
-      onClick={toggleDropdown}
-      className="hamburger-button"
-      alt="Menu"
-    />
-  </div>
+  {!isOpen && (
+        <div className="dropdown-wrapper">
+          <img
+            src={listSvg}
+            onClick={toggleDropdown}
+            className="hamburger-button"
+            alt="Menu"
+          />
+        </div>
+      )}
 
   {/* Αυτά κρύβονται σε κινητό */}
   <div className="nav-links">
@@ -45,7 +47,8 @@ function Navbar() {
     </ul>
   </div>
 
-  <DropdownMenu isOpen={isOpen} onClose={closeDropdown} />
+    <DropdownMenu isOpen={isOpen} onClose={closeDropdown} />
+
 </nav>
 
   );

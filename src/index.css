@@ -125,11 +125,11 @@ html {
 
 .scroll-half-circle {
   position: absolute;
-  top: -40px; /* το κάνει να "βγαίνει" από το footer */
+  top: -50px; /* το κάνει να "βγαίνει" από το footer */
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   background-color: #000000;
   color: white;
   border-radius: 50%;
@@ -183,6 +183,10 @@ html {
   bottom: 10px;
   cursor: pointer;
 }
+
+.header-mobile-content {
+    display: none;
+  }
 
 .header-titles-row {
   display: flex;
@@ -537,41 +541,29 @@ html {
 .header-container {
     position: relative;
     width: 100%;
-    height: 430px;
+    height: 230px;
     overflow: hidden;
     padding: 0;
     margin: 0;
    
   }
+ .header-content {
+    display: none;
+  }
 
-  .header-content {
-    position: relative;
-    z-index: 2;
+  .header-mobile-content {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 23px 4vw;
-    color: black;
     justify-content: center;
-     bottom: 4rem;
-  }
-
-  .header-titles-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  .header-left-block,
-  .header-right-block {
-    display: flex;
+    align-items: center;
     flex-direction: column;
-    max-width: 45vw;
   }
 
-  .header-left-title,
-  .header-right-title {
+.header-mobile-content h1 {
+   padding-top: 2rem;
+  }
+ 
+
+  .header-left-title {
     font-size: 1.1rem;
     font-weight: bold;
     margin: 0 0 30px 0;
@@ -579,24 +571,16 @@ html {
     color: #1d1d1d;
   }
 
-  .home-paragraph,
-  .home-paragraph-right {
+  .home-paragraph{
     font-size: 0.7rem;
     line-height: 1.5rem;
     color: #3b3a3a;
     font-weight: 900;
-
-    margin-top: 0;
+    margin-top: -10px;
   }
 
-  .home-paragraph {
-    text-align: left;
-  }
-
-  .home-paragraph-right {
-    text-align: right;
-  }
-
+ 
+ 
   .cv-download-button {
     width: 90px;
     padding: 4px 8px;
@@ -609,7 +593,7 @@ html {
     text-decoration: none;
     border-radius: 6px;
     transition: background-color 0.3s ease;
-    align-self: flex-end;
+    align-self: center;
   }
 
   .cv-download-button:hover {
@@ -634,26 +618,45 @@ html {
   }
 
   /* Dropdown menu */
-  .dropdown-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 45%;
-    background-color: #111;
-    z-index: 1000;
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
-  }
+.dropdown-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background: #111111;
+  z-index: 1000;
+  overflow-y: auto;
+  padding-top: 60px;
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
 
-  .dropdown-menu.open {
-    transform: translateY(0);
-  }
+.dropdown-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown-close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1101;
+}
+
+
+.hamburger-button {
+  width: 32px;
+  height: 32px;
+  cursor: pointer; 
+  
+}
+
+
+
 
   .main-links-mobile,
   .favicons-mobile {
@@ -665,39 +668,44 @@ html {
   }
 
   .main-links-mobile li {
-    margin-bottom: 1.5rem;
+    margin-bottom: 3.5rem;
   }
 
   .main-links-mobile a {
+     display: inline-block; /* ή block αν θες να πιάνει όλο το διαθέσιμο πλάτος */
+    width: 100%;           /* αν θες να γεμίζει το container */
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
   }
 
   .favicons-mobile {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  border-top: 1px solid white;
+  background: rgb(0, 0, 0); /* αν θες για να φαίνεται η γραμμή */
+  padding: 0.7rem 0;
+  z-index: 1000; /* να είναι πάνω από άλλα στοιχεία */
+}
+
 
   .favicons-mobile a {
     font-size: 1.8rem;
     color: white;
   }
 
-  .hamburger-button {
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-    filter: invert(1);
-    z-index: 1100;
-    position: relative;
-  }
+  
 
   .projects-title {
   font-size: 2.7rem;
   font-weight: 700;
   margin-bottom: 0px;
 }
+
+
 }

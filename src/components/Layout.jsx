@@ -13,7 +13,7 @@ function Layout() {
   useEffect(() => {
     AOS.init({
       duration: 1000, // χρόνος animation σε ms
-      once: true,    // animation και κάθε φορά που κάνεις scroll ξανά
+      once: false,    // animation και κάθε φορά που κάνεις scroll ξανά
     });
   }, []);
 

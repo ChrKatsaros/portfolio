@@ -1,10 +1,22 @@
 import React from 'react';
 import { FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { IoMdClose } from 'react-icons/io';
 
 // Δέχεται prop `isOpen` για smooth εμφάνιση
 function DropdownMenu({ isOpen, onClose }) {
   return (
     <div className={`dropdown-menu ${isOpen ? 'open' : ''}`}>
+
+       <div className="dropdown-close-button">
+         <IoMdClose
+            onClick={onClose}
+            className="hamburger-button"
+             style={{ fontSize: '28px', cursor: 'pointer', fill: 'inherit' }}
+          />
+
+
+      </div>
+
          <ul className="main-links-mobile">
             <li><a href="#about" onClick={onClose}>about</a></li>
             <li><a href="#projects" onClick={onClose}>projects</a></li>

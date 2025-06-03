@@ -10,7 +10,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="scroll-half-circle" onClick={scrollToTop}>
-        <p>🢁</p>
+        <p>⬆</p>
       </div>
       <p>&copy; {date} Chris Katsaros</p>
     </footer>
