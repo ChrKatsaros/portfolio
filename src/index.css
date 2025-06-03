@@ -317,7 +317,7 @@ html {
   padding: 40px;
   width: 300px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 9px 10px 12px rgba(0,0,0,0.08);
   text-align: left;
   transition: transform 0.2s ease !important;
 }
@@ -539,54 +539,51 @@ html {
   }
 
 .header-container {
-    position: relative;
-    width: 100%;
-    height: 226px;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-   
-  }
- .header-content {
-    display: none;
-  }
+  position: relative;
+  width: 100vw;
+  height: 216px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
 
-  .header-mobile-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+.header-content {
+  display: none;
+}
 
-.header-mobile-content h1 {
-   padding-top: 2rem;
-  }
- 
+.header-mobile-content {
+  display: flex;
+  justify-content:center;     /* Στοίχιση αριστερά */
+  align-items: center;         /* Στοίχιση αριστερά για όλα τα στοιχεία */
+  flex-direction: column;
+             /* Προαιρετικό padding για "αέρα" από αριστερά */
+  padding: 2rem;               /* Αντί για padding στο h1 */
+}
 
-  .header-left-title {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin: 0 0 30px 0;
-    white-space: nowrap;
-    color: #1d1d1d;
-  }
+.header-left-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;              /* Ομαλό margin για απόσταση */
+  color: #1d1d1d;
+  /* ΑΦΑΙΡΕΘΗΚΕ: white-space: nowrap */
+}
 
-  .home-paragraph{
-    font-size: 0.9rem;
-    line-height: 1.5rem;
-    color: #3b3a3a;
-    font-weight: 900;
-    margin-top: -10px;
-    max-width: 350px;
-  }
+.home-paragraph {
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  color: #3b3a3a;
+  font-weight: 900;
+  margin: 0;     
+  max-width: 600px;                  /* Καθαρό margin */
+}
 
  
  
   .cv-download-button {
-    width: 95px;
-    padding: 4px 8px;
-    font-size: 0.9rem;
-    margin-top: 8px;
+    width: 110px;
+    padding: 8px 8px;
+    font-size: 1.2rem;
+    margin-top: 25px;
     background-color: #af1f1f;
     color: #fff;
     font-weight: 500;
@@ -709,4 +706,14 @@ html {
 }
 
 
+.logo img {
+  padding: 4px;            /* Προαιρετικό, για να μην ακουμπάει το image τις άκρες */
+  width: 35px;             /* Μπορείς να ρυθμίσεις το μέγεθος όπως θες */
+  height: 35px;
+  
 }
+
+}
+
+
+

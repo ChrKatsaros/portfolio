@@ -44,13 +44,18 @@ function Home() {
 
       {/* Περιεχόμενο μόνο για mobile */}
       <div className="header-mobile-content">
-        <h1 className="header-left-title">{"<h1>Hello World!</h1>"}</h1>
-        <p className="home-paragraph">{homeText}</p>
+      <h1 className="header-left-title">
+  <span data-aos="fade-left" data-aos-delay="200">&lt;h1&gt; Hello </span>
+  <span data-aos="fade-right" data-aos-delay="600">World! &lt;/h1&gt;</span>
+</h1>
+
+        <p className="home-paragraph" data-aos="fade-down" data-aos-delay="1000" >{homeText}</p>
                <a
                 href="/cv/ChristosKatsaros_CV.pdf"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="cv-download-button"
+                 data-aos="fade-up" data-aos-delay="1000"
                 >
                 View CV
                </a>

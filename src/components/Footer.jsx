@@ -11,7 +11,7 @@ function Footer() {
  return (
   <footer className="footer">
     <div className="scroll-half-circle" onClick={scrollToTop}>
-     <img src={mouseIcon} alt="Scroll to top" width={64} height={64} />
+     <img src={mouseIcon} alt="Scroll to top" width={68} height={68} />
 
     </div>
     <p>&copy; {date} Chris Katsaros</p>
