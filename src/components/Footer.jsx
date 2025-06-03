@@ -1,4 +1,5 @@
 import React from 'react';
+import mouseIcon from '../assets/mouse.svg'; // το pect σου
 
 function Footer() {
   const date = new Date().getFullYear();
@@ -7,14 +8,15 @@ function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  return (
-    <footer className="footer">
-      <div className="scroll-half-circle" onClick={scrollToTop}>
-        <p>⬆</p>
-      </div>
-      <p>&copy; {date} Chris Katsaros</p>
-    </footer>
-  );
+ return (
+  <footer className="footer">
+    <div className="scroll-half-circle" onClick={scrollToTop}>
+     <img src={mouseIcon} alt="Scroll to top" width={64} height={64} />
+
+    </div>
+    <p>&copy; {date} Chris Katsaros</p>
+  </footer>
+);
 }
 
 export default Footer;
