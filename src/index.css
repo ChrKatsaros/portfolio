@@ -2,11 +2,21 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-
   color: #222; /* βασικό χρώμα κειμένου */
-  font-family: 'Poppins', sans-serif;
 
 }
+h1 {
+  font-family: "proxima nova bold", "Helvetica Neue", Helvetica, Arial, Sans-serif !important;
+  text-rendering: optimizeLegibility;
+  font-size: 4.2rem;
+  color: #333333 !important;
+}
+
+p {
+  color: #757575 !important;
+  font-size: 1.2rem;
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -154,23 +164,26 @@ html {
 
 
 /*----------------------------------                ------------------------------------------*/
+/* Container για όλο το header */
 .header-container {
   position: relative;
   width: 100%;
-  height: 730px; /* ή ό,τι ύψος θέλεις */
+  height: 730px; 
   overflow: hidden;
   padding: 0;
   margin: 0;
 }
 
+/* Φώτο background */
 .header-bg {
   position: absolute;
-  top:0; left: 0; right: 0; bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-size: cover;
   background-position: center center;
   z-index: 1;
 }
 
+/* Περιεχόμενο πάνω από το φώτο */
 .header-content {
   position: relative;
   z-index: 2;
@@ -184,70 +197,80 @@ html {
   cursor: pointer;
 }
 
+/* Κρύβουμε mobile περιεχόμενο στα desktop */
 .header-mobile-content {
-    display: none;
-  }
-
-.header-titles-row {
-  display: flex;
-  justify-content: space-between; /* αριστερά και δεξιά */
-  align-items: flex-start; /* ώστε οι παράγραφοι να ξεκινούν από πάνω */
+  display: none;
 }
 
+/* Σειρά τίτλων */
+.header-titles-row {
+ 
+  display: flex;
+  justify-content: space-between; /* αριστερά και δεξιά */
+  align-items: flex-start;         /* ώστε οι παράγραφοι να ξεκινούν από πάνω */
+}
+
+.header-titles-row h1{
+   font-size: 2.3rem !important;
+}
 /* Blocks για κάθε side, για σωστή κάθετη στοίχιση */
 .header-left-block,
 .header-right-block {
   display: flex;
   flex-direction: column;
-  max-width: 270px; /* ίδιο πλάτος για ομοιομορφία */
+  align-items: center;             /* ✅ Κέντρο ΟΡΙΖΟΝΤΙΑ */
+  text-align: center;
+  max-width: 390px;                /* ίδιο πλάτος για ομοιομορφία */
+  width: 100%;
 }
 
 /* Στυλ για τους τίτλους */
 .header-left-title,
 .header-right-title {
-  font-size: 2.1rem;
   white-space: nowrap;
-
+  justify-content: center;
+  text-align: center;
   font-weight: bold;
-  margin: 0 0 10px 0; /* λίγο κενό από κάτω */
+  margin: 0 0 10px 0;             /* λίγο κενό από κάτω */
   color: #474747;
 }
 
 /* Στυλ για το αριστερό paragraph */
 .home-paragraph {
-  font-size: 1.3rem;
-  margin-top: 0;
-  color: #6e6e6e;
   line-height: 2.3rem;
   max-width: 270px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  word-break: break-word;         /* ✅ Βοηθά σε μεγάλα κείμενα */
 }
 
 /* Στυλ για το δεξί paragraph */
 .home-paragraph-right {
-  font-size: 1.3rem;
-  margin-top: 0;
-  color: #6e6e6e;
   line-height: 2rem;
   max-width: 270px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
 
-
+/* Κουμπί CV */
 .cv-download-button {
   display: flex;
   justify-content: center;
-  text-align: center;
   align-items: center;
-  margin-top: 15px;
-  padding: 5px 10px;
+  margin-top: 20px;
+  padding: 10px 10px;
   background-color: #af1f1f;
   color: #fff;
   font-weight: 500;
   text-decoration: none;
   border-radius: 6px;
   transition: background-color 0.3s ease;
-  width: 120px;
+  width: 180px;
 }
 
+/* Hover εφέ στο κουμπί */
 .cv-download-button:hover {
   background-color: #2e2e2e;
 }
@@ -255,44 +278,67 @@ html {
 
 .info-container {
   max-width: 1000px; /* Περιορίζουμε το πλάτος ώστε να φαίνεται ωραία σε desktop */
-  margin: 0 auto;    /* Κεντράρουμε το container */
+  margin: 2rem auto;    /* Κεντράρουμε το container */
   padding: 40px 20px;
+  
+  
 }
 
 .info-title {
-  font-size: 3rem;
+
   margin-bottom: 2rem; 
   color: #1c1c1c;
 }
 
 .info-text {
-  font-size: 1.5rem;
-  line-height: 2.5rem; 
-  color: #333;
-  overflow: hidden; /* Για να "καθαρίσει" το float και να τυλίγει σωστά */
+
+  line-height: 2.5rem;
+  
+  padding: 3rem;
+  overflow: visible;          /* ✅ Το κείμενο να φαίνεται πάντα */
+  height: auto;               /* ✅ Το ύψος να μεγαλώνει όσο χρειάζεται */
+  min-height: fit-content;    /* ✅ Χρήσιμο σε κάποιους browsers */
+  box-sizing: border-box;     /* ✅ Για να μετριέται σωστά το padding */
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;      /* ✅ Αν έχει μακριές λέξεις */
+}
+.info-border {
+  background: #fffefe;
+  border-radius: 30px;
+  padding: 1.5rem;
+  box-shadow: 
+    inset 6px 6px 10px rgba(0, 0, 0, 0.08),
+    inset -6px -6px 10px rgba(255, 255, 255, 0.5),
+    6px 6px 16px rgba(0, 0, 0, 0.06),
+    -6px -6px 16px rgba(255, 255, 255, 0.6);
 }
 
 .about-image {
   float: right;
   width: 45%; /* Λίγο πιο μικρή εικόνα για να χωράει το κείμενο */
   max-width: 450px; /* Όριο στο μέγιστο πλάτος */
+  position: relative;
+
   margin: 0 0 15px 20px; /* Αριστερό περιθώριο ώστε το κείμενο να μην κολλάει */
   border-radius: 10px;
   shape-outside: inset(0);
   object-fit: cover;
+
+
 }
 
 
 
 /*--------------------------------------------PROJECTS CSS--------------------------------------*/
 .projects-wrapper {
-  padding: 0;
+  padding: 1.5rem;
   
   text-align: center;
 }
 
 .projects-title {
-  font-size: 3rem;
+
   font-weight: 700;
   margin-bottom: 2rem;
 }
@@ -379,13 +425,11 @@ html {
 }
 
 .contact-title {
-  font-size: 2.8rem; /* Μέγεθος τίτλου */
   color: #222; /* Σκούρο γκρι χρώμα */
   margin-bottom: 20px; /* Κάθετο περιθώριο κάτω από τον τίτλο */
 }
 
 .contact-description {
-  font-size: 1.5rem; /* Μεγαλύτερο μέγεθος γραμματοσειράς για την περιγραφή */
   margin-bottom: 25px; /* Κάθετο περιθώριο κάτω από την περιγραφή */
   color: #555; /* Γκρι χρώμα για το κείμενο */
   max-width: 500px; /* Μέγιστο πλάτος της παραγράφου */
@@ -467,9 +511,10 @@ html {
 
    .info-container {
     padding-left: 5vw;
-    padding-right: 0;
-    padding-top: 60px;
-    max-width: 95vw;
+    padding-right: 5vw;
+    
+    padding-top: 10px;
+    max-width: 90vw;
   }
   .contact-container {
     flex-direction: column; /* Στοίχιση κάθετα */
@@ -510,25 +555,36 @@ html {
   }
 
   .contact-right img {
-    max-width: 70%;        /* Εικόνα πιάνει όλο το πλάτος container */
-    height: auto;
+    max-width: 100%;        /* Εικόνα πιάνει όλο το πλάτος container */
+    height: 220px;
     object-fit: contain;    /* Να μην κόβεται η εικόνα */
     border-radius: 10px;
     position: relative;
     left: 80px;
-    bottom: 100px;
+    bottom: 70px;
   }
   .info-title {
     font-size: 2.7rem;
-    margin-bottom: 0rem;
+    margin-bottom: 1.2rem;
     color: #1c1c1c;
   }
 
   .info-text {
-    font-size: 0.9rem;
-    line-height: 1.6rem;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
     color: #333;
+    padding-left: 0.9rem;
+    
   }
+
+  .info-border{
+  background-color: rgb(245, 243, 243);
+  border-radius: 10px 50px 60px 190px;
+  border: 1px solid rgb(231, 230, 230);
+  padding: 1.5rem;
+  padding-top: 0 !important;
+}
+
 
   .about-image {
     float: right;
@@ -561,7 +617,7 @@ html {
 }
 
 .header-left-title {
-  font-size: 1.5rem;
+  font-size: 2.3rem;
   font-weight: bold;
   margin: 0 0 1rem 0;              /* Ομαλό margin για απόσταση */
   color: #1d1d1d;
@@ -712,6 +768,8 @@ html {
   height: 35px;
   
 }
+
+
 
 }
 
