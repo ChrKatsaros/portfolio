@@ -594,7 +594,8 @@ p{font-size: 1.3rem !important;
 
   .about-image {
     float: right;
-    width: 55%;      /* Μεγαλύτερο μέγεθος εικόνας */
+    width: 55%; 
+    height: 500px;     /* Μεγαλύτερο μέγεθος εικόνας */
     margin: 0 0 10px 15px;  /* Αριστερό κενό για το κείμενο να μην κολλάει */
     border-radius: 10px;
     shape-outside: inset(0); /* Βοηθά για καλύτερο wrap effect σε ορισμένους browsers */
