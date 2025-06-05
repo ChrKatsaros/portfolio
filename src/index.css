@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "proxima nova bold", "Helvetica Neue", Helvetica, Arial, Sans-serif !important;
   color: #222; /* βασικό χρώμα κειμένου */
 
 }
@@ -12,9 +12,16 @@ h1 {
   color: #333333 !important;
 }
 
+h2{
+    font-family: "proxima nova bold", "Helvetica Neue", Helvetica, Arial, Sans-serif !important;
+  text-rendering: optimizeLegibility;
+  font-size: 2.2rem;
+  color: #333333 !important;
+}
+
 p {
-  color: #757575 !important;
-  font-size: 1.2rem;
+  color: #575454 !important;
+  font-size: 1.3rem;
 }
 
 
@@ -260,14 +267,14 @@ html {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  padding: 10px 10px;
+  padding: 17px 17px;
   background-color: #af1f1f;
   color: #fff;
-  font-weight: 500;
+  font-weight: 900;
   text-decoration: none;
   border-radius: 6px;
   transition: background-color 0.3s ease;
-  width: 180px;
+  width: 190px;
 }
 
 /* Hover εφέ στο κουμπί */
@@ -277,56 +284,94 @@ html {
 
 
 .info-container {
-  max-width: 1000px; /* Περιορίζουμε το πλάτος ώστε να φαίνεται ωραία σε desktop */
-  margin: 2rem auto;    /* Κεντράρουμε το container */
+  max-width: 1000px;
+  margin: 3rem auto;
   padding: 40px 20px;
-  
-  
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-bottom: 1px solid rgb(230, 227, 227);
+}
+
+.info-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap; /* Κάνει πιο responsive διάταξη */
+}
+
+.info-text-block {
+  flex: 1;
 }
 
 .info-title {
-
-  margin-bottom: 2rem; 
+  margin-bottom: 2rem;
   color: #1c1c1c;
 }
 
 .info-text {
+  line-height: 1.9rem;
+   color: #575454 !important;
+  font-size: 1.3rem;
+}
 
-  line-height: 2.5rem;
-  
-  padding: 3rem;
-  overflow: visible;          /* ✅ Το κείμενο να φαίνεται πάντα */
-  height: auto;               /* ✅ Το ύψος να μεγαλώνει όσο χρειάζεται */
-  min-height: fit-content;    /* ✅ Χρήσιμο σε κάποιους browsers */
-  box-sizing: border-box;     /* ✅ Για να μετριέται σωστά το padding */
-  width: 100%;
-  max-width: 100%;
-  word-wrap: break-word;      /* ✅ Αν έχει μακριές λέξεις */
+.info-text p {
+  position: relative;
+  top:-30px;
+  font-size: small;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 0;
 }
-.info-border {
-  background: #fffefe;
-  border-radius: 30px;
-  padding: 1.5rem;
-  box-shadow: 
-    inset 6px 6px 10px rgba(0, 0, 0, 0.08),
-    inset -6px -6px 10px rgba(255, 255, 255, 0.5),
-    6px 6px 16px rgba(0, 0, 0, 0.06),
-    -6px -6px 16px rgba(255, 255, 255, 0.6);
+
+.info-skills p{
+   position: relative;
+  top:-10px;
+  font-size: small;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 0;
 }
+
+.infoImg {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.skill-icon {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.skill-icon:hover {
+  transform: scale(1.15);
+}
+
 
 .about-image {
-  float: right;
-  width: 45%; /* Λίγο πιο μικρή εικόνα για να χωράει το κείμενο */
-  max-width: 450px; /* Όριο στο μέγιστο πλάτος */
+  max-width: 100%;
+  height: auto;
   position: relative;
-
-  margin: 0 0 15px 20px; /* Αριστερό περιθώριο ώστε το κείμενο να μην κολλάει */
-  border-radius: 10px;
-  shape-outside: inset(0);
-  object-fit: cover;
-
-
+  bottom: -30px;
 }
+
+.info-skills {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
 
 
 
@@ -511,7 +556,7 @@ html {
   h1{
     font-size: 2.7rem;
   }
-p{font-size: 1.3rem !important;
+p{font-size: 1.1rem !important;
   line-height: 1.7rem;
   color: #3b3a3a;
  
@@ -570,37 +615,38 @@ p{font-size: 1.3rem !important;
     left: 80px;
     bottom: 70px;
   }
-  .info-title {
-    font-size: 2.7rem;
-    margin-bottom: 1.2rem;
-    color: #1c1c1c;
+  .info-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-text-block,
+  .infoImg {
+    width: 100%;
   }
 
   .info-text {
-    font-size: 1.1rem !important;
-    line-height: 1.5rem;
-    padding-left: 0.3rem;
-     color: #3b3a3a;
+    font-size: 1.1rem;
+    line-height: 1.7rem;
   }
 
-  .info-border{
-  background-color: rgb(245, 243, 243);
-  border-radius: 10px 50px 60px 190px;
-  border: 1px solid rgb(231, 230, 230);
-  padding: 1.5rem;
-  padding-top: 0 !important;
-}
-
-
-  .about-image {
-    float: right;
-    width: 55%; 
-    height: 500px;     /* Μεγαλύτερο μέγεθος εικόνας */
-    margin:0;
-    position: relative;
-    right: -40px;
-    shape-outside: inset(0); /* Βοηθά για καλύτερο wrap effect σε ορισμένους browsers */
+  .skill-icon {
+    font-size: 1.8rem;
   }
+
+  .info-text p {
+    top: -15px;
+  }
+
+  .info-skills {
+    font-size: 1.1rem;
+  }
+
+  .skills-icons {
+    gap: 1.5rem;
+  }
+
 
 .header-container {
   position: relative;
@@ -635,7 +681,7 @@ p{font-size: 1.3rem !important;
 .home-paragraph {
   font-weight: 900;
   margin: 0;     
-  max-width: 600px;                  /* Καθαρό margin */
+  max-width: 600px;                  
 }
 
  
