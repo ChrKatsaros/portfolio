@@ -484,15 +484,29 @@ html {
   color: #5e5e5e;
   text-decoration: none;
   font-weight: 900;
-  transition: transform 0.3s ease, text-decoration 0.1s ease !important;
+  transition: transform 0.3s ease, text-decoration 0.1s ease;
   display: inline-block;
+  animation: subtle-shake 3s ease-in-out infinite;
+  transform-origin: center;
 }
 
 .project-link:hover {
   text-decoration: underline;
-  transform: scale(1.1) !important;
-  
+  transform: scale(1.1);
 }
+
+
+
+@keyframes subtle-shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  15%      { transform: translateX(-2.5px) rotate(-2deg); }
+  30%      { transform: translateX(2.5px) rotate(1deg); }
+  45%      { transform: translateX(-2px) rotate(-1deg); }
+  60%      { transform: translateX(2px) rotate(0.8deg); }
+  75%      { transform: translateX(-1.5px) rotate(-0.6deg); }
+  90%      { transform: translateX(1.5px) rotate(0.4deg); }
+}
+
 
 
 /*--------------------------------CONTACTS CSS----------------------------------------*/
