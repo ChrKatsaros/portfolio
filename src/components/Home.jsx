@@ -11,12 +11,12 @@ function Home() {
         <div
           className="header-bg-left"
           style={{ backgroundImage: `url(${HeaderIMGL})` }}
-          data-aos="fade-right"  data-aos-delay="770"
+          data-aos="fade-right"  data-aos-delay="700"
         />
         <div
           className="header-bg-right"
           style={{ backgroundImage: `url(${HeaderIMGR})` }}
-          data-aos="fade-left" data-aos-delay="770"
+          data-aos="fade-left" data-aos-delay="700"
         />
 
         {/* Περιεχόμενο μόνο για desktop */}
