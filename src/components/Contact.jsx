@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaEnvelope, FaPhoneAlt, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
-import contactIMG from '../assets/contact.jpg';
+import contactIMG from '../assets/contact.png';
 
 function Contact() {
   return (

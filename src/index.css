@@ -501,9 +501,12 @@ html {
   display: flex; /* Τοποθετεί τα παιδιά του οριζόντια (δίπλα-δίπλα) */
   flex-wrap: wrap; /* Επιτρέπει να "σπάνε" σε νέα γραμμή σε μικρές οθόνες */
   padding: 150px 100px; /* Εσωτερικό περιθώριο πάνω/κάτω και δεξιά/αριστερά */
-  
+  margin-top: 3rem;
   gap: 3rem; /* Απόσταση ανάμεσα στις δύο στήλες */
   align-items: center; /* Κάθετη στοίχιση στο κέντρο */
+  border-radius: 400px 400px 0 0;
+  background-color: #f7f7f7;
+  
 }
 
 .contact-left {
@@ -615,7 +618,13 @@ p{font-size: 1.1rem !important;
     flex-direction: column; /* Στοίχιση κάθετα */
     padding: 60px 5vw;      /* Μικρότερα padding για κινητά */
     gap: 2rem;              /* Μικρότερο κενό μεταξύ στοιχείων */
+
+     align-items: center; /* Κάθετη στοίχιση στο κέντρο */
+  border-radius: 150px 150px 0 0;
+  background-color: #fafafa;
   }
+
+  
 
   .contact-left,
   .contact-right {
@@ -703,6 +712,7 @@ p{font-size: 1.1rem !important;
   overflow: hidden;
   padding: 0;
   margin: 0;
+  
 }
 
 .header-content {
@@ -716,6 +726,8 @@ p{font-size: 1.1rem !important;
   flex-direction: column;
              /* Προαιρετικό padding για "αέρα" από αριστερά */
   padding: 2rem;               /* Αντί για padding στο h1 */
+    border-radius: 0 0 120px 120px ;
+  background-color: #fafafa;
 }
 
 .header-left-title {
