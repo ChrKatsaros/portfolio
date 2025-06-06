@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
 import listSvg from "../assets/list.svg";
 import DropdownMenu from './DropDownMenu';
+import lightOff from "../assets/lightbulb-off-white.svg"
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,9 +17,13 @@ function Navbar() {
 
   return (
   <nav className="navbar">
-  <div className="logo" >
+  <div className="logo" > 
+   
     <img src="/favicon.ico" alt="Logo" />
+    
+
   </div>
+  
 
   {/* ΜΟΝΟ το hamburger, τελείως δεξιά */}
   {!isOpen && (

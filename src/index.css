@@ -358,13 +358,37 @@ html {
   margin-top: 2rem;
 }
 
+.skills-carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.skills-track {
+  display: flex;
+  gap: 3rem;
+  animation: slide-left 25s linear infinite;
+  width: fit-content;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .skill-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 
 .skill-icon:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 
@@ -381,6 +405,10 @@ html {
   font-weight: bold;
 }
 
+/* Pause animation όταν γίνεται hover σε icon */
+.skills-carousel:hover .skills-track {
+  animation-play-state: paused;
+}
 
 
 
