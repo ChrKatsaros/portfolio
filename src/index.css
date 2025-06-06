@@ -2,7 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "proxima nova bold", "Helvetica Neue", Helvetica, Arial, Sans-serif !important;
-  color: #222; /* βασικό χρώμα κειμένου */
+  
+ 
 
 }
 h1 {
@@ -180,7 +181,9 @@ html {
   margin: 0;
   padding: 0;
   
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* shadow μόνο κάτω */
 }
+
 
 /* Split background left */
 .header-bg-left,
@@ -341,6 +344,8 @@ html {
   font-weight: 600;
   font-style: italic;
   margin-top: 0;
+  
+
 }
 
 .infoImg {
@@ -496,7 +501,7 @@ html {
   display: flex; /* Τοποθετεί τα παιδιά του οριζόντια (δίπλα-δίπλα) */
   flex-wrap: wrap; /* Επιτρέπει να "σπάνε" σε νέα γραμμή σε μικρές οθόνες */
   padding: 150px 100px; /* Εσωτερικό περιθώριο πάνω/κάτω και δεξιά/αριστερά */
-  background-color: #ffffff; /* Λευκό φόντο */
+  
   gap: 3rem; /* Απόσταση ανάμεσα στις δύο στήλες */
   align-items: center; /* Κάθετη στοίχιση στο κέντρο */
 }

@@ -11,27 +11,59 @@ function Home() {
         <div
           className="header-bg-left"
           style={{ backgroundImage: `url(${HeaderIMGL})` }}
-          data-aos="fade-right"  data-aos-delay="700"
+          data-aos="fade-right"
+          data-aos-delay="700"
+          data-aos-duration="1800"
+          data-aos-offset="500"
+          data-aos-easing="ease-in-out"
         />
         <div
           className="header-bg-right"
           style={{ backgroundImage: `url(${HeaderIMGR})` }}
-          data-aos="fade-left" data-aos-delay="700"
+          data-aos="fade-left"
+          data-aos-delay="700"
+          data-aos-duration="1800"
+          data-aos-offset="500"
+          data-aos-easing="ease-in-out"
         />
 
         {/* Περιεχόμενο μόνο για desktop */}
         <div className="header-content">
           <div className="header-titles-row">
-            <div className="header-left-block" data-aos="fade-up" data-aos-delay="800">
+            <div
+              className="header-left-block"
+              data-aos="fade-up"
+              data-aos-delay="800"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
               <h1 className="header-left-title">{" Hello World! "}</h1>
-              <p className="home-paragraph" data-aos="fade-up" data-aos-delay="880">
+              <p
+                className="home-paragraph"
+                data-aos="fade-up"
+                data-aos-delay="880"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+              >
                 {homeText}
               </p>
             </div>
 
-            <div className="header-right-block" data-aos="fade-left" data-aos-delay="900">
+            <div
+              className="header-right-block"
+              data-aos="fade-left"
+              data-aos-delay="900"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
               <h1 className="header-right-title">{"About me "}</h1>
-              <p className="home-paragraph-right" data-aos="fade-up" data-aos-delay="900">
+              <p
+                className="home-paragraph-right"
+                data-aos="fade-up"
+                data-aos-delay="900"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+              >
                 View my CV Here!
               </p>
               <a
@@ -49,11 +81,23 @@ function Home() {
 
       {/* Περιεχόμενο μόνο για mobile */}
       <div className="header-mobile-content">
-        <h1 className="header-left-title"data-aos="fade-up" data-aos-delay="300" >
+        <h1
+          className="header-left-title"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+        >
           <span>Hello </span>
           <span>World!</span>
         </h1>
-        <p className="home-paragraph" data-aos="fade-down" data-aos-delay="1000">
+        <p
+          className="home-paragraph"
+          data-aos="fade-down"
+          data-aos-delay="1000"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+        >
           {homeText}
         </p>
         <a
