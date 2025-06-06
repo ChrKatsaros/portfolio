@@ -11,25 +11,25 @@ function Home() {
         <div
           className="header-bg-left"
           style={{ backgroundImage: `url(${HeaderIMGL})` }}
-          data-aos="fade-right" 
+          data-aos="fade-right"  data-aos-delay="700"
         />
         <div
           className="header-bg-right"
           style={{ backgroundImage: `url(${HeaderIMGR})` }}
-          data-aos="fade-left"
+          data-aos="fade-left" data-aos-delay="700"
         />
 
         {/* Περιεχόμενο μόνο για desktop */}
         <div className="header-content">
           <div className="header-titles-row">
-            <div className="header-left-block" data-aos="fade-right" data-aos-delay="200">
+            <div className="header-left-block" data-aos="fade-up" data-aos-delay="800">
               <h1 className="header-left-title">{" Hello World! "}</h1>
-              <p className="home-paragraph" data-aos="fade-up" data-aos-delay="600">
+              <p className="home-paragraph" data-aos="fade-up" data-aos-delay="880">
                 {homeText}
               </p>
             </div>
 
-            <div className="header-right-block" data-aos="fade-left" data-aos-delay="400">
+            <div className="header-right-block" data-aos="fade-left" data-aos-delay="900">
               <h1 className="header-right-title">{"About me "}</h1>
               <p className="home-paragraph-right" data-aos="fade-up" data-aos-delay="900">
                 View my CV Here!
