@@ -721,7 +721,7 @@ p{font-size: 1.1rem !important;
 .header-left-title {
   font-size: 2.3rem;
   font-weight: bold;
-  margin: 2rem 0 1rem 0;              /* Ομαλό margin για απόσταση */
+  margin: 0.6rem 0 1rem 0;              /* Ομαλό margin για απόσταση */
   color: #1d1d1d;
   /* ΑΦΑΙΡΕΘΗΚΕ: white-space: nowrap */
 }
@@ -739,7 +739,7 @@ p{font-size: 1.1rem !important;
     width: 120px;
     padding: 8px 8px;
     font-size: 1.2rem;
-    margin-top: 5px;
+    margin-top: 25px;
     background-color: #000000;
     color: #fff;
     font-weight: 500;
