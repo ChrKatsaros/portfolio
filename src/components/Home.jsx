@@ -105,6 +105,10 @@ function Home() {
           target="_blank"
           rel="noopener noreferrer"
           className="cv-download-button"
+          data-aos="fade-down"
+          data-aos-delay="1000"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
         >
           View CV
         </a>
