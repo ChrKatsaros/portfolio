@@ -3,7 +3,6 @@ body {
   padding: 0;
   font-family: "proxima nova bold", "Helvetica Neue", Helvetica, Arial, Sans-serif !important;
   
- 
 
 }
 h1 {
@@ -519,7 +518,8 @@ html {
   gap: 3rem; /* Απόσταση ανάμεσα στις δύο στήλες */
   align-items: center; /* Κάθετη στοίχιση στο κέντρο */
   border-radius: 400px 400px 0 0;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
+background-image: url("https://www.transparenttextures.com/patterns/hexellence.png");
   
 }
 
@@ -895,11 +895,4 @@ p{font-size: 1.1rem !important;
 }
 
 
-
-
-
-
 }
-
-
-
