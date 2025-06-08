@@ -8,7 +8,7 @@ import Home from './Home';
 import Info from './Info';
 import Projects from './Projects';
 import Contact from './Contact';
-import Preloader from './PreLoader';
+import Preloader from './Preloader';
 
 function Layout() {
   const [loading, setLoading] = useState(true);
