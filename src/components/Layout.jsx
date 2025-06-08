@@ -10,29 +10,51 @@ import Projects from './Projects';
 import Contact from './Contact';
 import Preloader from './Preloader';
 
+// εισάγουμε τις εικόνες εδώ
+import HeaderIMGL from '../assets/HeaderIMGL.webp';
+import HeaderIMGR from '../assets/HeaderIMGR.webp';
+
 function Layout() {
   const [loading, setLoading] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: false,
+  // περιμένουμε να φορτώσουν οι εικόνες
+  const preloadImages = () => {
+    return new Promise((resolve) => {
+      let loaded = 0;
+
+      const imgL = new Image();
+      const imgR = new Image();
+
+      const checkLoaded = () => {
+        loaded += 1;
+        if (loaded === 2) resolve();
+      };
+
+      imgL.src = HeaderIMGL;
+      imgR.src = HeaderIMGR;
+
+      imgL.onload = checkLoaded;
+      imgR.onload = checkLoaded;
+
+      imgL.onerror = checkLoaded;
+      imgR.onerror = checkLoaded;
     });
+  };
 
-    const timer = setTimeout(() => {
-      setFadeOut(true); // Ξεκίνα το fade out
-    }, 2300);
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
 
-    // Μετά το fade out (πχ 500ms), κρύψε τον preloader
-    const fadeTimer = setTimeout(() => {
-      setLoading(false);
-    }, 2800); // 2300 + 500
+    preloadImages().then(() => {
+      // αφού φορτώσουν οι εικόνες, περιμένουμε λίγο για fade
+      setTimeout(() => {
+        setFadeOut(true);
+      }, 200); // μικρή αναμονή πριν fade
 
-    return () => {
-      clearTimeout(timer);
-      clearTimeout(fadeTimer);
-    };
+      setTimeout(() => {
+        setLoading(false);
+      }, 700); // +500ms για το fade
+    });
   }, []);
 
   if (loading) {
