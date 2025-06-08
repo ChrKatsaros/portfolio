@@ -517,7 +517,7 @@ html {
   margin-top: 3rem;
   gap: 3rem; /* Απόσταση ανάμεσα στις δύο στήλες */
   align-items: center; /* Κάθετη στοίχιση στο κέντρο */
-  border-radius: 400px 400px 0 0;
+  border-radius: 50% 50% 0 0;
   background-color: #ffffff;
 background-image: url("https://www.transparenttextures.com/patterns/hexellence.png");
   
@@ -634,7 +634,7 @@ p{font-size: 1.1rem !important;
     gap: 2rem;              /* Μικρότερο κενό μεταξύ στοιχείων */
 
      align-items: center; /* Κάθετη στοίχιση στο κέντρο */
-  border-radius: 150px 150px 0 0;
+  border-radius: 100px 100px 0 0;
   
     background-color: #ffffff;
 background-image: url("https://www.transparenttextures.com/patterns/hexellence.png");
