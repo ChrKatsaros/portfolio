@@ -739,28 +739,28 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
 
 .header-mobile-content {
   display: flex;
-  justify-content:center;     /* Στοίχιση αριστερά */
-  align-items: center;         /* Στοίχιση αριστερά για όλα τα στοιχεία */
+  justify-content:center;    
+  align-items: center;         
   flex-direction: column;
-             /* Προαιρετικό padding για "αέρα" από αριστερά */
-  padding: 2rem;               /* Αντί για padding στο h1 */
+             
+  padding: 2rem;              
     border-radius: 0 0 120px 120px ;
-  background-color: #fafafa;
+  background-color: #fffefe;
 }
 
 .header-left-title {
-  font-size: 2.3rem;
+  font-size: 3rem;
   font-weight: bold;
-  margin: 0.6rem 0 1rem 0;              /* Ομαλό margin για απόσταση */
+  margin: 0.6rem 0 1rem 0;              
   color: #1d1d1d;
-  /* ΑΦΑΙΡΕΘΗΚΕ: white-space: nowrap */
+ 
 }
 
 .home-paragraph {
-  font-weight: 900;
+  font-weight: 800;
   margin: 0;     
-  max-width: 600px;   
-  font-size: 0.9rem !important;               
+  max-width: 400px;   
+  font-size: 1.6rem !important;               
 }
 
  
