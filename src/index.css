@@ -714,13 +714,15 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
     overflow-x: hidden;
   }   
   h1{
-    font-size:96px;
+    font-size:82px;
   }
-p{font-size: 1.1rem !important;
+.projects-description{
+  font-size: 1.1rem;
   line-height: 1.7rem;
   color: #3b3a3a;
  
 }
+
 .infoImg{
   display: none;
 }
@@ -741,6 +743,27 @@ p{font-size: 1.1rem !important;
   padding: 0.2rem;
   flex-wrap: nowrap;
   border-bottom: 1px solid rgb(230, 227, 227);
+}
+
+
+.overlay-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.7); /* μαύρο ημιδιαφανές */
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  color: #ffffff !important; /* απαλό καθαρό λευκό (aesthetic white) */
+
+  font-weight: 500;
+  font-family: 'Inter', sans-serif; /* αν θες, βάλε clean μοντέρνα γραμματοσειρά */
+  text-align: center;
+  line-height: 1.1;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* βοηθά στο contrast */
 }
 
 
@@ -878,7 +901,9 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   font-weight: 900;
   margin: 0;     
   max-width: 400px;   
-  font-size: 1.2rem !important;               
+  font-size: 1.1rem !important; 
+  color: #3b3a3a;
+            
 }
 
  
@@ -1015,6 +1040,7 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   height: 35px;
   
 }
+
 
 
 }

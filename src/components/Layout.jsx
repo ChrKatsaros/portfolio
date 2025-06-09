@@ -15,31 +15,46 @@ import Preloader from './Preloader';
 import HeaderIMGL from '../assets/HeaderIMGL.webp';
 import HeaderIMGR from '../assets/HeaderIMGR.webp';
 
+// Εικόνες του Info (για preload)
+import about2 from '../assets/about2.jpg';
+import about3 from '../assets/about3.jpg';
+import about4 from '../assets/about4.jpg';
+import about5 from '../assets/about5.jpg';
+import about9 from '../assets/about9.jpg';
+
 function Layout() {
   const [loading, setLoading] = useState(true);      // Όσο είναι true, δείχνουμε τον Preloader
   const [fadeOut, setFadeOut] = useState(false);     // Χρησιμοποιείται για το ομαλό ξεθώριασμα (fade)
 
-  // ➤ Συνάρτηση που περιμένει να φορτωθούν πλήρως και οι 2 εικόνες
+  // ➤ Λίστα με όλες τις εικόνες που πρέπει να φορτωθούν
+  const imagesToPreload = [
+    HeaderIMGL,
+    HeaderIMGR,
+    about2,
+    about3,
+    about4,
+    about5,
+    about9,
+  ];
+
+  // ➤ Συνάρτηση που περιμένει να φορτωθούν όλες οι εικόνες
   const preloadImages = () => {
     return new Promise((resolve) => {
-      let loaded = 0;
+      let loadedCount = 0;
+      const totalImages = imagesToPreload.length;
 
-      const imgL = new Image();      // Δημιουργούμε νέο image αντικείμενο
-      const imgR = new Image();
+      imagesToPreload.forEach((src) => {
+        const img = new Image();
+        img.src = src;
 
-      const checkLoaded = () => {
-        loaded += 1;
-        if (loaded === 2) resolve();   // Όταν και οι δύο εικόνες φορτωθούν, συνεχίζουμε
-      };
-
-      imgL.src = HeaderIMGL;
-      imgR.src = HeaderIMGR;
-
-      imgL.onload = checkLoaded;      // Αν η εικόνα φορτωθεί κανονικά
-      imgR.onload = checkLoaded;
-
-      imgL.onerror = checkLoaded;     // Ακόμα και αν αποτύχει η φόρτωση, συνεχίζουμε (για ασφάλεια)
-      imgR.onerror = checkLoaded;
+        // Ανεξάρτητα αν η φόρτωση πετύχει ή αποτύχει, μετράμε την εικόνα ως φορτωμένη
+        img.onload = img.onerror = () => {
+          loadedCount++;
+          if (loadedCount === totalImages) {
+            resolve();  // Όταν φορτωθούν όλες, συνεχίζουμε
+          }
+        };
+      });
     });
   };
 
@@ -47,7 +62,7 @@ function Layout() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });  // Ενεργοποιούμε την AOS για animations
 
-    // Περιμένουμε πρώτα να φορτωθούν οι εικόνες
+    // Περιμένουμε πρώτα να φορτωθούν όλες οι εικόνες
     preloadImages().then(() => {
       // Μικρή καθυστέρηση (200ms) για να δείξει το fadeOut animation
       setTimeout(() => {
