@@ -1,29 +1,68 @@
 import React from 'react';
-import AboutIMG from '../assets/AboutIMG.png';
+
 import { homeText1 } from './HomePageText';
+import about2 from '../assets/about2.jpg';
+import about3 from '../assets/about3.jpg';
+import about4 from '../assets/about4.jpg';
+import about9 from '../assets/about9.jpg';
+import about5 from '../assets/about5.jpg';
+
 
 // Icons
-import { 
-  FaHtml5, FaCss3Alt, FaJs, FaReact, FaGithub, FaTerminal, FaMobileAlt 
+import {
+  FaHtml5, FaCss3Alt, FaJs, FaReact, FaGithub, FaTerminal, FaMobileAlt
 } from 'react-icons/fa';
 import { SiPostgresql } from 'react-icons/si';
 
 function Info() {
+  const cards = [
+    {
+      image: about9,
+      alt: 'Web development passion',
+      text: 'I love creating and learning how to build modern websites.'
+    },
+    {
+      image: about4,
+      alt: 'UI / UX learner',
+      text: 'Exploring UI & UX design step by step to improve user experience.'
+    }
+  ];
+
   return (
     <div className="info-container">
 
       <div className="info-content">
         <div className="info-text-block">
-          <h1 className="info-title" data-aos="fade-right" data-aos-delay="190">About.</h1>
+          <h1 className="info-title" data-aos="fade-right" data-aos-delay="190">about.</h1>
           <div className="info-text" data-aos="fade-down" data-aos-delay="490">
-            <p data-aos="fade-right" data-aos-delay="990">Front End Web Developer on the making</p>
-            {homeText1}
-          </div>
+  <p data-aos="fade-right" data-aos-delay="990">Front End Web Developer on the making</p>
+  <div
+    dangerouslySetInnerHTML={{ __html: homeText1 }}
+  />
+</div>
+
         </div>
 
         <div className="infoImg">
-          <img src={AboutIMG} alt="About" className="about-image" data-aos="fade-up" data-aos-delay="200" />
+          <div className="left-img">
+            <img src={about2} alt="Vertical layout" data-aos="fade-right" data-aos-delay="190"  />
+          </div>
+          <div className="right-imgs">
+            <img src={about3} alt="Right top" data-aos="fade-left" data-aos-delay="190" />
+            <img src={about5} alt="Right bottom" data-aos="fade-up" data-aos-delay="190" />
+          </div>
         </div>
+      </div>
+
+      <div className="info-image-row">
+        {cards.map((card, index) => (
+          <div key={index} className="image-hover-card">
+            <img src={card.image} alt={card.alt} />
+            <div className="overlay-text">
+              <p>{card.text}</p>
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="info-skills">
@@ -32,7 +71,6 @@ function Info() {
 
         <div className="skills-carousel">
           <div className="skills-track">
-            {/* Icons x1000 for infinite effect */}
             {[...Array(4)].map((_, i) => (
               <React.Fragment key={i}>
                 <FaHtml5 className="skill-icon" title="HTML5" color="#e34c26" />

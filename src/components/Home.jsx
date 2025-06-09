@@ -81,16 +81,7 @@ function Home() {
 
       {/* Περιεχόμενο μόνο για mobile */}
       <div className="header-mobile-content">
-        <h1
-          className="header-left-title"
-          data-aos="fade-up"
-          data-aos-delay="300"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
-        >
-          <span>Hello </span>
-          <span>World!</span>
-        </h1>
+       
         <p
           className="home-paragraph"
           data-aos="fade-down"
@@ -105,8 +96,8 @@ function Home() {
           target="_blank"
           rel="noopener noreferrer"
           className="cv-download-button"
-           data-aos="fade-down"
-          data-aos-delay="500"
+           data-aos="fade-left"
+          data-aos-delay="1500"
           data-aos-duration="900"
           data-aos-easing="ease-in-out"
           

@@ -5,8 +5,13 @@ function Projects() {
   return (
     <div className="projects-wrapper">
       <h1 className="projects-title" data-aos="fade-down" data-aos-delay="100">
-        Projects.
+        projects.
       </h1>
+      <p className="projects-description">
+  These projects are built with <strong>React</strong>, focusing on clean design, responsiveness, and a smooth user experience across all devices. I'm constantly learning and refining both the visual and functional aspects of my work.
+</p>
+
+
       <div className="projects-line" data-aos="fade-in" data-aos-delay="200" />
       <div className="projects-grid">
         {projects.map((project, index) => (

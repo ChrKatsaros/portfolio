@@ -20,7 +20,7 @@ h2{
 }
 
 p {
-  color: #575454 !important;
+  
   font-size: 1.3rem;
 }
 
@@ -336,6 +336,69 @@ html {
   margin-top: 0;
 }
 
+.info-image-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgb(230, 227, 227);
+}
+
+.image-hover-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px #dcdcdc, -10px -10px 20px #ffffff;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.image-hover-card img {
+  display: block;
+  height: 300px;
+  width: auto;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.image-hover-card:hover img {
+  transform: scale(1.05);
+}
+
+.overlay-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.7); /* μαύρο ημιδιαφανές */
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  color: #ffffff !important; /* απαλό καθαρό λευκό (aesthetic white) */
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif; /* αν θες, βάλε clean μοντέρνα γραμματοσειρά */
+  text-align: center;
+  line-height: 1.6;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* βοηθά στο contrast */
+}
+
+.image-hover-card:hover .overlay-text {
+  opacity: 1;
+}
+
+
+.info-skills {
+  text-align: center;
+  color: #333333 !important;
+
+  font-weight: bold;
+}
+
+
 .info-skills p{
    position: relative;
   top:-10px;
@@ -346,13 +409,46 @@ html {
   
 
 }
-
 .infoImg {
-  flex: 1;
   display: flex;
+  gap: 0.6rem;
+  margin-top: 6rem;
   justify-content: center;
-  align-items: center;
 }
+
+.left-img img {
+  height: 400px;
+  width: auto;
+  border-radius: 0px;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.right-imgs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.right-imgs img {
+  height: 195px;
+  width: auto;
+  border-radius: 0px;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.left-img img,
+.right-imgs img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.left-img img:hover,
+.right-imgs img:hover {
+  transform: scale(0.98);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
 
 .skills-icons {
   display: flex;
@@ -403,11 +499,7 @@ html {
   bottom: -30px;
 }
 
-.info-skills {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
+
 
 /* Pause animation όταν γίνεται hover σε icon */
 .skills-carousel:hover .skills-track {
@@ -419,7 +511,7 @@ html {
 /*--------------------------------------------PROJECTS CSS--------------------------------------*/
 .projects-wrapper {
   padding: 1.5rem;
-  
+  margin-bottom: 7rem;
   text-align: center;
 }
 
@@ -433,7 +525,7 @@ html {
   width: 100px;
   height: 3px;
   background-color: #000;
-  margin: 0 auto 40px auto;
+  margin: 1.4rem auto 40px auto;
   border-radius: 2px;
 }
 
@@ -506,6 +598,15 @@ html {
   90%      { transform: translateX(1.5px) rotate(0.4deg); }
 }
 
+.projects-description {
+  max-width: 800px;
+  margin: 40px auto 0 auto;
+ 
+  color: #444;
+  line-height: 1.7;
+  text-align:start;
+  padding: 0 1rem;
+}
 
 
 /*--------------------------------CONTACTS CSS----------------------------------------*/
@@ -518,7 +619,7 @@ html {
   gap: 3rem; /* Απόσταση ανάμεσα στις δύο στήλες */
   align-items: center; /* Κάθετη στοίχιση στο κέντρο */
   border-radius: 50% 50% 0 0;
-  background-color: #ffffff;
+  background-color: #ffffff81;
 background-image: url("https://www.transparenttextures.com/patterns/hexellence.png");
   
 }
@@ -613,21 +714,44 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
     overflow-x: hidden;
   }   
   h1{
-    font-size: 2.7rem;
+    font-size:96px;
   }
 p{font-size: 1.1rem !important;
   line-height: 1.7rem;
   color: #3b3a3a;
  
 }
+.infoImg{
+  display: none;
+}
+
 
    .info-container {
     padding-left: 5vw;
     padding-right: 5vw;
-    
+    margin-top: 1rem;
     padding-top: 10px;
     max-width: 90vw;
   }
+
+  .info-image-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.2rem;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid rgb(230, 227, 227);
+}
+
+
+.image-hover-card img {
+  display: block;
+  height: 150px;
+  width: auto;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
   .contact-container {
     flex-direction: column; /* Στοίχιση κάθετα */
     padding: 60px 5vw;      /* Μικρότερα padding για κινητά */
@@ -748,19 +872,13 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   background-color: #fffdfd;
 }
 
-.header-left-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin: 0.6rem 0 1rem 0;              
-  color: #1d1d1d;
- 
-}
 
 .home-paragraph {
-  font-weight: 800;
+  padding: 0.5rem;
+  font-weight: 900;
   margin: 0;     
   max-width: 400px;   
-  font-size: 1.6rem !important;               
+  font-size: 1.2rem !important;               
 }
 
  
