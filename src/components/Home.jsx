@@ -80,6 +80,12 @@ function Home() {
       </div>
 
       {/* Περιεχόμενο μόνο για mobile */}
+      <div class="background-decor">
+  <span class="circle circle-1"></span>
+  <span class="square square-1"></span>
+  <span class="circle circle-2"></span>
+</div>
+
       <div className="header-mobile-content">
        
         <p
