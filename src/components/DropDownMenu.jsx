@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaGithub, FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import { IoMdClose } from 'react-icons/io';
 
 // Δέχεται prop `isOpen` για smooth εμφάνιση
@@ -35,9 +35,13 @@ function DropdownMenu({ isOpen, onClose }) {
                  </a>
                </li>
                <li>
-                 <a href="tel:+306947193918">
-                   <FaPhone />
-                 </a>
+                 <a
+                    href="https://www.linkedin.com/in/christos-katsaros-57a21a315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                    target="_blank"
+                     rel="noopener noreferrer"
+                 >
+                    <FaLinkedin />
+                  </a>
                </li>
              </ul>
     </div>
