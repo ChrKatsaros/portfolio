@@ -80,11 +80,18 @@ function Home() {
       </div>
 
       {/* Περιεχόμενο μόνο για mobile */}
-      <div class="background-decor">
-  <span class="circle circle-1"></span>
-  <span class="square square-1"></span>
-  <span class="circle circle-2"></span>
+      <div
+  className="background-decor"
+  data-aos="fade"
+  data-aos-delay="1000"
+  data-aos-duration="1000"
+  data-aos-easing="ease-in-out"
+>
+  <span className="circle circle-1"></span>
+  <span className="square square-1"></span>
+  <span className="circle circle-2"></span>
 </div>
+
 
       <div className="header-mobile-content">
        

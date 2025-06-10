@@ -1068,15 +1068,15 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
 .circle-1 {
   width: 80px;
   height: 80px;
-  top: 68%;
+  top: 50%;
   left: 10%;
 }
 
 .circle-2 {
   width: 100px;
   height: 100px;
-  bottom: 14%;
-  right: 15%;
+  bottom: 10%;
+  right: 5%;
 }
 
 /* Squares */
@@ -1087,7 +1087,7 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
 .square-1 {
   width: 80px;
   height: 60px;
-  top: 68%;
+  top: 47%;
   right: 5%;
 }
 
@@ -1097,7 +1097,7 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
     transform: translateY(0) rotate(0);
   }
   50% {
-    transform: translateY(-27px) rotate(5deg);
+    transform: translateY(-21px) rotate(5deg);
   }
 }
 
