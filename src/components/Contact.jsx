@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEnvelope, FaPhoneAlt, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
 import contactIMG from '../assets/contact.png';
 
 function Contact() {
@@ -17,7 +17,14 @@ function Contact() {
             <FaEnvelope /> <a href="mailto:chr.katsaros99@gmail.com">chr.katsaros99@gmail.com</a>
           </li>
           <li data-aos="fade-up" data-aos-delay="400">
-            <FaPhoneAlt /> <span>+30 6947 199 318</span>
+            <FaLinkedin />{" "}
+            <a
+              href="https://www.linkedin.com/in/christos-katsaros-57a21a315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              linkedin.com/in/christos-katsaros
+            </a>
           </li>
           <li data-aos="fade-up" data-aos-delay="500">
             <FaGithub /> <a href="https://github.com/ChrKatsaros" target="_blank" rel="noreferrer">github.com/ChrKatsaros</a>

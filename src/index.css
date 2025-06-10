@@ -619,7 +619,7 @@ html {
   gap: 3rem; /* Απόσταση ανάμεσα στις δύο στήλες */
   align-items: center; /* Κάθετη στοίχιση στο κέντρο */
   border-radius: 50% 50% 0 0;
-  background-color: #ffffff81;
+  background-color: #ffffff;
 background-image: url("https://www.transparenttextures.com/patterns/hexellence.png");
   
 }
