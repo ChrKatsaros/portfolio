@@ -66,7 +66,7 @@ function Info() {
       </div>
 
       <div className="info-skills">
-        <h2>Skills.</h2>
+        <h2  className='melting'>Skills.</h2>
         <p>Some of the skills I have learned through my self-taught journey in web development:</p>
 
         <div className="skills-carousel">
