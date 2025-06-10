@@ -7,7 +7,7 @@ function Contact() {
     <section className="contact-container">
       {/* Αριστερά: Τίτλος + Πληροφορίες */}
       <div className="contact-left" data-aos="fade-right" data-aos-delay="200">
-        <h1 className="contact-title">contact.</h1>
+        <h1 className="contact-title"><span class="realistic-marker-highlight"> con</span>tact</h1>
         <p className="contact-description">
           I'm always open to new opportunities, collaborations or freelance work. Feel free to reach out!
         </p>

@@ -33,7 +33,7 @@ function Info() {
 
       <div className="info-content">
         <div className="info-text-block">
-          <h1 className="info-title" data-aos="fade-right" data-aos-delay="190">about.</h1>
+          <h1 className="info-title" data-aos="fade-right" data-aos-delay="190"><span class="realistic-marker-highlight"> abo</span>ut.</h1>
           <div className="info-text" data-aos="fade-down" data-aos-delay="490">
   <p data-aos="fade-right" data-aos-delay="990">Front End Web Developer on the making</p>
   <div

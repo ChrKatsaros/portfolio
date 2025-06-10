@@ -714,7 +714,7 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
     overflow-x: hidden;
   }   
   h1{
-    font-size:82px;
+    font-size:69px;
   }
 .projects-description{
   font-size: 1.1rem;
@@ -765,7 +765,9 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   line-height: 1.1;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* βοηθά στο contrast */
 }
-
+.overlay-text p{
+  font-size: small;
+}
 
 .image-hover-card img {
   display: block;
@@ -1062,7 +1064,7 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
 /* Circles */
 .background-decor .circle {
   border-radius: 50%;
-  background: #0077ff;
+  background: #000000;
 }
 
 .circle-1 {
@@ -1102,4 +1104,22 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
 }
 
 
+}
+
+
+
+.realistic-marker-highlight{
+  position:relative;
+}
+.realistic-marker-highlight:before{
+  content:"";
+  background-color:#ff6db7;
+  width:100%;
+  height:1em;
+  position:absolute;
+  z-index:-1;
+  filter:url(#marker-shape);
+  left:-0.25em;
+  top:0.1em;
+  padding:0 0.25em;
 }

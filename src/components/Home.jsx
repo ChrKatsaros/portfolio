@@ -102,7 +102,7 @@ function Home() {
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
         >
-          {homeText}
+         <span class="realistic-marker-highlight"> {homeText}</span> 
         </p>
         <a
           href="/cv/ChristosKatsaros_CV.pdf"
