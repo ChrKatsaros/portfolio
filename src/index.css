@@ -49,9 +49,9 @@ html {
 .nav-links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;  /* να πάνε αριστερά */
+  justify-content: flex-end;  
   flex-grow: 1;                  /* να πάρει όλο τον διαθέσιμο χώρο */
-  gap: 3rem;                    /* απόσταση ανάμεσα στα nav links (groups) */
+  gap: 3rem;                    
 }
 
 /* Τα δύο <ul> είναι μέσα στο .nav-links, οπότε το gap το βάζουμε στο .nav-links */
@@ -65,36 +65,36 @@ html {
 
 /* Απόσταση μεταξύ των li μέσα στα nav links */
 .nav-links ul.main-links li {
-  margin-right: 3rem; /* Απόσταση μεταξύ των κειμένων */
+  margin-right: 3rem; 
 }
 
 .nav-links ul.main-links li:last-child {
-  margin-right: 0; /* Τελευταίο χωρίς margin δεξιά */
+  margin-right: 0; 
 }
 
 .nav-links a,
 .favicons a {
-  color: white;             /* Λευκό χρώμα κειμένου */
-  text-decoration: none;    /* Χωρίς υπογράμμιση */
-  font-style: normal;       /* Αν θες να αφαιρέσεις italics */
+  color: white;             
+  text-decoration: none;    
+  font-style: normal;       
   transition: 0.15s ease-in;
 }
 
-/* Προαιρετικά για hover (να δείχνει ότι είναι clickable) */
+
 .nav-links a:hover,
 .favicons a:hover {
-  color: #797979;/* ή άλλο εφέ που θέλεις */
+  color: #797979;
   cursor: pointer;
 }
 
 
-/* Favicons (μικρή απόσταση μεταξύ τους) */
+
 .favicons li {
-  margin-left: 3rem; /* Μικρή απόσταση ανάμεσα στα icons */
+  margin-left: 3rem; 
 }
 
 .favicons li:first-child {
-  margin-left: 1; /* Πρώτο icon χωρίς αριστερό margin */
+  margin-left: 1; 
 }
 
 .favicons a {
@@ -106,22 +106,22 @@ html {
 .logo{
   display: flex;
   align-items: center;
-  justify-content: flex-start;  /* να πάνε αριστερά */
+  justify-content: flex-start;  
   flex-grow: 1;                  /* να πάρει όλο τον διαθέσιμο χώρο */
   gap: 3rem;  
   cursor: pointer;
 }
 .logo img {
-  background-color: white; /* Λευκό background */
-  border-radius: 50%;      /* Κάνει το στοιχείο στρογγυλό */
-  padding: 4px;            /* Προαιρετικό, για να μην ακουμπάει το image τις άκρες */
-  width: 50px;             /* Μπορείς να ρυθμίσεις το μέγεθος όπως θες */
+  background-color: white; 
+  border-radius: 50%;      
+  padding: 4px;            
+  width: 50px;             
   height: 50px;
   object-fit: contain;     /* Για να κρατάει τις αναλογίες του εικόνας */
 }
 .logo img:hover {
   cursor: pointer;
-  filter: brightness(0.5); /* Σκουραίνει λίγο την εικόνα */
+  filter: brightness(0.5); 
   transition: filter 0.35s ease;
 }
 
@@ -142,7 +142,7 @@ html {
 
 .scroll-half-circle {
   position: absolute;
-  top: -50px; /* το κάνει να "βγαίνει" από το footer */
+  top: -50px; 
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
@@ -180,7 +180,7 @@ html {
   margin: 0;
   padding: 0;
   
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* shadow μόνο κάτω */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); 
 }
 
 
@@ -253,7 +253,7 @@ html {
   font-size: 3.8rem !important;
 }
 
-/* Αριστερή παράγραφος */
+
 .home-paragraph {
   line-height: 2.3rem;
   max-width: 270px;
@@ -263,7 +263,7 @@ html {
   word-break: break-word;
 }
 
-/* Δεξιά παράγραφος */
+
 .home-paragraph-right {
   line-height: 2rem;
   max-width: 270px;
@@ -272,7 +272,7 @@ html {
   margin: 0 auto;
 }
 
-/* Κουμπί CV */
+
 .cv-download-button {
   display: flex;
   justify-content: center;
@@ -288,7 +288,7 @@ html {
   width: 190px;
 }
 
-/* Hover effect */
+
 .cv-download-button:hover {
   background-color: #2e2e2e;
 }
@@ -309,7 +309,7 @@ html {
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
-  flex-wrap: wrap; /* Κάνει πιο responsive διάταξη */
+  flex-wrap: wrap;
 }
 
 .info-text-block {
@@ -373,17 +373,17 @@ html {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.7); /* μαύρο ημιδιαφανές */
+  background: rgba(0, 0, 0, 0.7); 
   border-radius: 20px;
   opacity: 0;
   transition: opacity 0.4s ease;
-  color: #ffffff !important; /* απαλό καθαρό λευκό (aesthetic white) */
+  color: #ffffff !important; 
   font-size: 1rem;
   font-weight: 500;
-  font-family: 'Inter', sans-serif; /* αν θες, βάλε clean μοντέρνα γραμματοσειρά */
+  font-family: 'Inter', sans-serif; 
   text-align: center;
   line-height: 1.6;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* βοηθά στο contrast */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); 
 }
 
 .image-hover-card:hover .overlay-text {
@@ -409,6 +409,31 @@ html {
   
 
 }
+
+ .melting {
+      position: relative;
+      display: inline-block;
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+      margin: 40px;
+    }
+
+    .melting::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0px;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(105deg, #a2d9f9 0%, #0a60a7 100%);
+      border-radius: 10px 10px 15px 15px / 10px 10px 25px 25px;
+      box-shadow:
+        0 4px 0 0 #4ccc3b,
+        10px 5px 0 0 #36444e,
+        30px 8px 0 0 #e02cc2;
+    }
+
 .infoImg {
   display: flex;
   gap: 0.6rem;
@@ -500,8 +525,6 @@ html {
 }
 
 
-
-/* Pause animation όταν γίνεται hover σε icon */
 .skills-carousel:hover .skills-track {
   animation-play-state: paused;
 }
@@ -616,8 +639,8 @@ html {
   flex-wrap: wrap; /* Επιτρέπει να "σπάνε" σε νέα γραμμή σε μικρές οθόνες */
   padding: 150px 100px; /* Εσωτερικό περιθώριο πάνω/κάτω και δεξιά/αριστερά */
   margin-top: 3rem;
-  gap: 3rem; /* Απόσταση ανάμεσα στις δύο στήλες */
-  align-items: center; /* Κάθετη στοίχιση στο κέντρο */
+  gap: 3rem; 
+  align-items: center; 
   border-radius: 50% 50% 0 0;
   background-color: #ffffff;
 background-image: url("https://www.transparenttextures.com/patterns/hexellence.png");
@@ -626,56 +649,56 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
 
 .contact-left {
   flex: 1; /* Καταλαμβάνει ίσο πλάτος με το δεξί div */
-  min-width: 300px; /* Όριο στο πόσο μικρό μπορεί να γίνει */
+  min-width: 300px;
 }
 
 .contact-title {
-  color: #222; /* Σκούρο γκρι χρώμα */
+  color: #222; 
   margin-bottom: 20px; /* Κάθετο περιθώριο κάτω από τον τίτλο */
 }
 
 .contact-description {
-  margin-bottom: 25px; /* Κάθετο περιθώριο κάτω από την περιγραφή */
-  color: #555; /* Γκρι χρώμα για το κείμενο */
-  max-width: 500px; /* Μέγιστο πλάτος της παραγράφου */
-  line-height: 1.6; /* Ύψος γραμμής για καλύτερη αναγνωσιμότητα */
+  margin-bottom: 25px; 
+  color: #555; 
+  max-width: 500px; 
+  line-height: 1.6; 
 }
 
 .contact-info {
-  list-style: none; /* Αφαιρεί τα bullets από τη λίστα */
-  padding: 0; /* Αφαιρεί προεπιλεγμένο εσωτερικό περιθώριο */
-  font-size: 1rem; /* Κανονικό μέγεθος γραμματοσειράς */
-  color: #333; /* Σκούρο γκρι χρώμα για το κείμενο */
+  list-style: none; 
+  padding: 0; 
+  font-size: 1rem; 
+  color: #333; 
 }
 
 .contact-info li {
-  margin-bottom: 15px; /* Κάθετο περιθώριο ανάμεσα στα στοιχεία επικοινωνίας */
+  margin-bottom: 15px; 
   display: flex; /* Τοποθετεί εικονίδιο και κείμενο οριζόντια */
-  align-items: center; /* Κάθετη στοίχιση στο κέντρο */
-  gap: 10px; /* Απόσταση ανάμεσα στο εικονίδιο και το κείμενο */
+  align-items: center; 
+  gap: 10px; 
 }
 
 .contact-info a {
-  color: #000; /* Μαύρο χρώμα στα links */
-  text-decoration: none; /* Αφαίρεση της υπογράμμισης */
-  transition: color 0.2s ease; /* Ομαλή αλλαγή χρώματος στο hover */
+  color: #000; 
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .contact-info a:hover {
-  color: #929090; /* Πιο ανοιχτό γκρι όταν περνάει το ποντίκι */
+  color: #929090; 
 }
 
 .contact-right {
   flex: 1; /* Καταλαμβάνει ίδιο πλάτος με το αριστερό div */
-  min-width: 300px; /* Όριο στο πόσο μικρό μπορεί να γίνει */
-  display: flex; /* Χρήση flexbox για στοίχιση της εικόνας */
-  justify-content: center; /* Κεντράρει οριζόντια την εικόνα */
+  min-width: 300px; 
+  display: flex;
+  justify-content: center;
 }
 
 .contact-right img {
-  width: 100%; /* Κάνει την εικόνα να πιάνει όλο το πλάτος του container */
-  max-width: 450px; /* Όριο στο μέγιστο πλάτος της εικόνας */
-  height: auto; /* Διατηρεί τη σωστή αναλογία διαστάσεων */
+  width: 100%; 
+  max-width: 450px; 
+  height: auto; 
   object-fit: cover; /* Κόβει την εικόνα ώστε να γεμίσει σωστά το container */
 }
 
@@ -686,7 +709,7 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   background: none;
   border: none;
   cursor: pointer;
-  filter: invert(1); /* Κάνει το μαύρο burger λευκό αν το background είναι σκοτεινό */
+  filter: invert(1); 
 }
 
 
@@ -753,17 +776,17 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
-  background: rgba(0, 0, 0, 0.7); /* μαύρο ημιδιαφανές */
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   opacity: 0;
   transition: opacity 0.4s ease;
-  color: #ffffff !important; /* απαλό καθαρό λευκό (aesthetic white) */
+  color: #ffffff !important;
 
   font-weight: 500;
-  font-family: 'Inter', sans-serif; /* αν θες, βάλε clean μοντέρνα γραμματοσειρά */
+  font-family: 'Inter', sans-serif; 
   text-align: center;
   line-height: 1.1;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* βοηθά στο contrast */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); 
 }
 .overlay-text p{
   font-size: 0.9rem;
@@ -778,11 +801,11 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
 }
 
   .contact-container {
-    flex-direction: column; /* Στοίχιση κάθετα */
-    padding: 60px 5vw;      /* Μικρότερα padding για κινητά */
-    gap: 2rem;              /* Μικρότερο κενό μεταξύ στοιχείων */
+    flex-direction: column; 
+    padding: 60px 5vw;      
+    gap: 2rem;              
 
-     align-items: center; /* Κάθετη στοίχιση στο κέντρο */
+     align-items: center; 
   border-radius: 100px 100px 0 0;
   
     background-color: #ffffff;
@@ -795,9 +818,9 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
 
   .contact-left,
   .contact-right {
-    flex: none;             /* Αφαίρεση ευελιξίας για σταθερό μέγεθος */
-    width: 100%;            /* Πλήρες πλάτος */
-    min-width: auto;        /* Αφαίρεση min-width */
+    flex: none;            
+    width: 100%;            
+    min-width: auto;        
   }
 
   .contact-title {
@@ -805,14 +828,14 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   }
 
   .contact-description {
-    font-size: 1rem;        /* Μικρότερο κείμενο */
-    max-width: 100%;        /* Πλήρες πλάτος */
+    font-size: 1rem;        
+    max-width: 100%;        
     margin-bottom: 20px;
     line-height: 1.5;
   }
 
   .contact-info {
-    font-size: 0.9rem;      /* Μικρότερη γραμματοσειρά */
+    font-size: 0.9rem;      
   }
 
   .contact-info li {
@@ -820,14 +843,14 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   }
 
   .contact-right {
-    justify-content: center; /* Κέντρο οριζόντια */
-    margin-top: 20px;        /* Κενό πάνω από την εικόνα */
+    justify-content: center; 
+    margin-top: 20px;        
   }
 
   .contact-right img {
-    max-width: 100%;        /* Εικόνα πιάνει όλο το πλάτος container */
+    max-width: 100%;        
     height: 220px;
-    object-fit: contain;    /* Να μην κόβεται η εικόνα */
+    object-fit: contain;    
     border-radius: 10px;
     position: relative;
     left: 80px;
@@ -1003,8 +1026,8 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   }
 
   .main-links-mobile a {
-     display: inline-block; /* ή block αν θες να πιάνει όλο το διαθέσιμο πλάτος */
-    width: 100%;           /* αν θες να γεμίζει το container */
+     display: inline-block; 
+    width: 100%;          
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
@@ -1019,9 +1042,9 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   justify-content: center;
   gap: 3rem;
   border-top: 1px solid white;
-  background: rgb(0, 0, 0); /* αν θες για να φαίνεται η γραμμή */
+  background: rgb(0, 0, 0); 
   padding: 0.7rem 0;
-  z-index: 1000; /* να είναι πάνω από άλλα στοιχεία */
+  z-index: 1000; 
 }
 
 
@@ -1039,8 +1062,8 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
 
 
 .logo img {
-  padding: 4px;            /* Προαιρετικό, για να μην ακουμπάει το image τις άκρες */
-  width: 35px;             /* Μπορείς να ρυθμίσεις το μέγεθος όπως θες */
+  padding: 4px;           
+  width: 35px;             
   height: 35px;
   
 }
@@ -1126,26 +1149,3 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   padding:0 0.25em;
 }
 
- .melting {
-      position: relative;
-      display: inline-block;
-      font-size: 24px;
-      font-weight: bold;
-      color: #000;
-      margin: 40px;
-    }
-
-    .melting::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0px;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(105deg, #a2d9f9 0%, #0a60a7 100%);
-      border-radius: 10px 10px 15px 15px / 10px 10px 25px 25px;
-      box-shadow:
-        0 4px 0 0 #4ccc3b,
-        10px 5px 0 0 #36444e,
-        30px 8px 0 0 #e02cc2;
-    }
