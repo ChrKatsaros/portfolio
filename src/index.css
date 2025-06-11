@@ -766,7 +766,7 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* βοηθά στο contrast */
 }
 .overlay-text p{
-  font-size: small;
+  font-size: 0.9rem;
 }
 
 .image-hover-card img {
@@ -860,7 +860,9 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   }
 
   .info-text p {
-    top: -15px;
+    top: -30px;
+    margin-bottom: 0;
+   
   }
 
   .info-skills {
@@ -1089,7 +1091,7 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
 .square-1 {
   width: 80px;
   height: 60px;
-  top: 47%;
+  top: 49%;
   right: 5%;
 }
 
@@ -1099,7 +1101,7 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
     transform: translateY(0) rotate(0);
   }
   50% {
-    transform: translateY(-21px) rotate(5deg);
+    transform: translateY(-30px) rotate(20deg);
   }
 }
 
