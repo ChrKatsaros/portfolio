@@ -1,41 +1,39 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "proxima nova bold", "Helvetica Neue", Helvetica, Arial, Sans-serif !important;
-  
-
+  font-family: 'proxima nova bold', 'Helvetica Neue', Helvetica, Arial,
+    Sans-serif !important;
 }
 h1 {
-  font-family: "proxima nova bold", "Helvetica Neue", Helvetica, Arial, Sans-serif !important;
+  font-family: 'proxima nova bold', 'Helvetica Neue', Helvetica, Arial,
+    Sans-serif !important;
   text-rendering: optimizeLegibility;
   font-size: 6rem;
   color: #333333 !important;
 }
 
-h2{
-    font-family: "proxima nova bold", "Helvetica Neue", Helvetica, Arial, Sans-serif !important;
+h2 {
+  font-family: 'proxima nova bold', 'Helvetica Neue', Helvetica, Arial,
+    Sans-serif !important;
   text-rendering: optimizeLegibility;
   font-size: 2.2rem;
   color: #333333 !important;
 }
 
 p {
-  
   font-size: 1.3rem;
 }
-
 
 html {
   scroll-behavior: smooth;
 }
-
 
 /*------------------------------------------LAYOUT CSS--------------------------------------*/
 
 .layout {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;  /* ώστε το footer να πάει κάτω στην οθόνη */
+  min-height: 100vh; /* ώστε το footer να πάει κάτω στην οθόνη */
 }
 
 .navbar {
@@ -49,9 +47,9 @@ html {
 .nav-links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;  
-  flex-grow: 1;                  /* να πάρει όλο τον διαθέσιμο χώρο */
-  gap: 3rem;                    
+  justify-content: flex-end;
+  flex-grow: 1; /* να πάρει όλο τον διαθέσιμο χώρο */
+  gap: 3rem;
 }
 
 /* Τα δύο <ul> είναι μέσα στο .nav-links, οπότε το gap το βάζουμε στο .nav-links */
@@ -60,26 +58,24 @@ html {
   list-style: none;
   margin: 0;
   padding: 0;
-  
 }
 
 /* Απόσταση μεταξύ των li μέσα στα nav links */
 .nav-links ul.main-links li {
-  margin-right: 3rem; 
+  margin-right: 3rem;
 }
 
 .nav-links ul.main-links li:last-child {
-  margin-right: 0; 
+  margin-right: 0;
 }
 
 .nav-links a,
 .favicons a {
-  color: white;             
-  text-decoration: none;    
-  font-style: normal;       
+  color: white;
+  text-decoration: none;
+  font-style: normal;
   transition: 0.15s ease-in;
 }
-
 
 .nav-links a:hover,
 .favicons a:hover {
@@ -87,14 +83,12 @@ html {
   cursor: pointer;
 }
 
-
-
 .favicons li {
-  margin-left: 3rem; 
+  margin-left: 3rem;
 }
 
 .favicons li:first-child {
-  margin-left: 1; 
+  margin-left: 1;
 }
 
 .favicons a {
@@ -103,33 +97,30 @@ html {
   text-decoration: none;
 }
 
-.logo{
+.logo {
   display: flex;
   align-items: center;
-  justify-content: flex-start;  
-  flex-grow: 1;                  /* να πάρει όλο τον διαθέσιμο χώρο */
-  gap: 3rem;  
+  justify-content: flex-start;
+  flex-grow: 1; /* να πάρει όλο τον διαθέσιμο χώρο */
+  gap: 3rem;
   cursor: pointer;
 }
 .logo img {
-  background-color: white; 
-  border-radius: 50%;      
-  padding: 4px;            
-  width: 50px;             
+  background-color: white;
+  border-radius: 50%;
+  padding: 4px;
+  width: 50px;
   height: 50px;
-  object-fit: contain;     /* Για να κρατάει τις αναλογίες του εικόνας */
+  object-fit: contain; /* Για να κρατάει τις αναλογίες του εικόνας */
 }
 .logo img:hover {
   cursor: pointer;
-  filter: brightness(0.5); 
+  filter: brightness(0.5);
   transition: filter 0.35s ease;
 }
 
-
-
 .page-content {
-  flex: 1;               /* για να γεμίζει όλο το διαθέσιμο ύψος */
-  
+  flex: 1; /* για να γεμίζει όλο το διαθέσιμο ύψος */
 }
 
 .footer {
@@ -142,7 +133,7 @@ html {
 
 .scroll-half-circle {
   position: absolute;
-  top: -50px; 
+  top: -50px;
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
@@ -160,15 +151,14 @@ html {
   clip-path: inset(0 0 50% 0); /* εμφανίζει μόνο το πάνω μισό */
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
 }
-.scroll-half-circle p{
+.scroll-half-circle p {
   position: relative;
-  bottom:14px
+  bottom: 14px;
 }
 
 .scroll-half-circle:hover {
   transform: translateX(-50%) scale(1.05);
 }
-
 
 /*----------------------------------                ------------------------------------------*/
 /* Container για όλο το header */
@@ -179,10 +169,9 @@ html {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); 
-}
 
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
 
 /* Split background left */
 .header-bg-left,
@@ -253,7 +242,6 @@ html {
   font-size: 3.8rem !important;
 }
 
-
 .home-paragraph {
   line-height: 2.3rem;
   max-width: 270px;
@@ -263,7 +251,6 @@ html {
   word-break: break-word;
 }
 
-
 .home-paragraph-right {
   line-height: 2rem;
   max-width: 270px;
@@ -271,7 +258,6 @@ html {
   text-align: center;
   margin: 0 auto;
 }
-
 
 .cv-download-button {
   display: flex;
@@ -288,11 +274,9 @@ html {
   width: 190px;
 }
 
-
 .cv-download-button:hover {
   background-color: #2e2e2e;
 }
-
 
 .info-container {
   max-width: 1000px;
@@ -323,13 +307,13 @@ html {
 
 .info-text {
   line-height: 1.9rem;
-   color: #575454 !important;
+  color: #575454 !important;
   font-size: 1.3rem;
 }
 
 .info-text p {
   position: relative;
-  top:-30px;
+  top: -30px;
   font-size: small;
   font-weight: 600;
   font-style: italic;
@@ -373,23 +357,22 @@ html {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.7); 
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   opacity: 0;
   transition: opacity 0.4s ease;
-  color: #ffffff !important; 
+  color: #ffffff !important;
   font-size: 1rem;
   font-weight: 500;
-  font-family: 'Inter', sans-serif; 
+  font-family: 'Inter', sans-serif;
   text-align: center;
   line-height: 1.6;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); 
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .image-hover-card:hover .overlay-text {
   opacity: 1;
 }
-
 
 .info-skills {
   text-align: center;
@@ -398,41 +381,35 @@ html {
   font-weight: bold;
 }
 
-
-.info-skills p{
-   position: relative;
-  top:-10px;
+.info-skills p {
+  position: relative;
+  top: -10px;
   font-size: small;
   font-weight: 600;
   font-style: italic;
   margin-top: 0;
-  
-
 }
 
- .melting {
-      position: relative;
-      display: inline-block;
-      font-size: 24px;
-      font-weight: bold;
-      color: #000;
-      margin: 40px;
-    }
+.melting {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  margin: 40px;
+}
 
-    .melting::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0px;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(105deg, #a2d9f9 0%, #0a60a7 100%);
-      border-radius: 10px 10px 15px 15px / 10px 10px 25px 25px;
-      box-shadow:
-        0 4px 0 0 #4ccc3b,
-        10px 5px 0 0 #36444e,
-        30px 8px 0 0 #e02cc2;
-    }
+.melting::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(105deg, #a2d9f9 0%, #0a60a7 100%);
+  border-radius: 10px 10px 15px 15px / 10px 10px 25px 25px;
+  box-shadow: 0 4px 0 0 #4ccc3b, 10px 5px 0 0 #36444e, 30px 8px 0 0 #e02cc2;
+}
 
 .infoImg {
   display: flex;
@@ -446,7 +423,7 @@ html {
   width: auto;
   border-radius: 0px;
   object-fit: cover;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .right-imgs {
@@ -460,7 +437,7 @@ html {
   width: auto;
   border-radius: 0px;
   object-fit: cover;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .left-img img,
@@ -473,7 +450,6 @@ html {
   transform: scale(0.98) !important;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
-
 
 .skills-icons {
   display: flex;
@@ -516,7 +492,6 @@ html {
   transform: scale(1.1);
 }
 
-
 .about-image {
   max-width: 100%;
   height: auto;
@@ -524,12 +499,9 @@ html {
   bottom: -30px;
 }
 
-
 .skills-carousel:hover .skills-track {
   animation-play-state: paused;
 }
-
-
 
 /*--------------------------------------------PROJECTS CSS--------------------------------------*/
 .projects-wrapper {
@@ -539,7 +511,6 @@ html {
 }
 
 .projects-title {
-
   font-weight: 700;
   margin-bottom: 2rem;
 }
@@ -555,16 +526,18 @@ html {
 .projects-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  gap: 5rem;
+  max-width: 1000px; /* ή όσο θες */
+  margin: 0 auto; /* κεντράρει το grid */
+  justify-content: center; /* στοιχίζει τα items στο κέντρο κάθε σειράς */
 }
 
 .project-card {
   background: #fff;
   padding: 40px;
-  width: 300px;
+  width: 330px;
   border-radius: 12px;
-  box-shadow: 9px 10px 12px rgba(0,0,0,0.08);
+  box-shadow: 9px 10px 12px rgba(0, 0, 0, 0.08);
   text-align: left;
   transition: transform 0.2s ease !important;
 }
@@ -609,28 +582,40 @@ html {
   transform: scale(1.1);
 }
 
-
-
 @keyframes subtle-shake {
-  0%, 100% { transform: translateX(0) rotate(0); }
-  15%      { transform: translateX(-2.5px) rotate(-2deg); }
-  30%      { transform: translateX(2.5px) rotate(1deg); }
-  45%      { transform: translateX(-2px) rotate(-1deg); }
-  60%      { transform: translateX(2px) rotate(0.8deg); }
-  75%      { transform: translateX(-1.5px) rotate(-0.6deg); }
-  90%      { transform: translateX(1.5px) rotate(0.4deg); }
+  0%,
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+  15% {
+    transform: translateX(-2.5px) rotate(-2deg);
+  }
+  30% {
+    transform: translateX(2.5px) rotate(1deg);
+  }
+  45% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  60% {
+    transform: translateX(2px) rotate(0.8deg);
+  }
+  75% {
+    transform: translateX(-1.5px) rotate(-0.6deg);
+  }
+  90% {
+    transform: translateX(1.5px) rotate(0.4deg);
+  }
 }
 
 .projects-description {
   max-width: 800px;
   margin: 40px auto 0 auto;
- 
+
   color: #444;
   line-height: 1.7;
-  text-align:start;
+  text-align: start;
   padding: 0 1rem;
 }
-
 
 /*--------------------------------CONTACTS CSS----------------------------------------*/
 
@@ -639,12 +624,11 @@ html {
   flex-wrap: wrap; /* Επιτρέπει να "σπάνε" σε νέα γραμμή σε μικρές οθόνες */
   padding: 150px 100px; /* Εσωτερικό περιθώριο πάνω/κάτω και δεξιά/αριστερά */
   margin-top: 3rem;
-  gap: 3rem; 
-  align-items: center; 
+  gap: 3rem;
+  align-items: center;
   border-radius: 50% 50% 0 0;
   background-color: #ffffff;
-background-image: url("https://www.transparenttextures.com/patterns/hexellence.png");
-  
+  background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
 }
 
 .contact-left {
@@ -653,52 +637,52 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
 }
 
 .contact-title {
-  color: #222; 
+  color: #222;
   margin-bottom: 20px; /* Κάθετο περιθώριο κάτω από τον τίτλο */
 }
 
 .contact-description {
-  margin-bottom: 25px; 
-  color: #555; 
-  max-width: 500px; 
-  line-height: 1.6; 
+  margin-bottom: 25px;
+  color: #555;
+  max-width: 500px;
+  line-height: 1.6;
 }
 
 .contact-info {
-  list-style: none; 
-  padding: 0; 
-  font-size: 1rem; 
-  color: #333; 
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #333;
 }
 
 .contact-info li {
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
   display: flex; /* Τοποθετεί εικονίδιο και κείμενο οριζόντια */
-  align-items: center; 
-  gap: 10px; 
+  align-items: center;
+  gap: 10px;
 }
 
 .contact-info a {
-  color: #000; 
+  color: #000;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .contact-info a:hover {
-  color: #929090; 
+  color: #929090;
 }
 
 .contact-right {
   flex: 1; /* Καταλαμβάνει ίδιο πλάτος με το αριστερό div */
-  min-width: 300px; 
+  min-width: 300px;
   display: flex;
   justify-content: center;
 }
 
 .contact-right img {
-  width: 100%; 
-  max-width: 450px; 
-  height: auto; 
+  width: 100%;
+  max-width: 450px;
+  height: auto;
   object-fit: cover; /* Κόβει την εικόνα ώστε να γεμίσει σωστά το container */
 }
 
@@ -709,49 +693,45 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   background: none;
   border: none;
   cursor: pointer;
-  filter: invert(1); 
+  filter: invert(1);
 }
 
+@media (min-width: 769px) {
+  /* === Dropdown Wrapper (θέση του burger icon) === */
+  .dropdown-wrapper {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 1002;
+    display: none;
+  }
 
-
-@media (min-width:769px){
-/* === Dropdown Wrapper (θέση του burger icon) === */
-.dropdown-wrapper {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 1002;
-  display: none;
+  .dropdown-menu {
+    display: none;
+  }
 }
-
-.dropdown-menu{
-  display: none;
-}
-}
-
 
 /*-----------------------------------MOBILES CSS------------------------------------------------*/
 
 @media (max-width: 768px) {
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
-  }   
-  h1{
-    font-size:69px;
   }
-.projects-description{
-  font-size: 1.1rem;
-  line-height: 1.7rem;
-  color: #3b3a3a;
- 
-}
+  h1 {
+    font-size: 69px;
+  }
+  .projects-description {
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+    color: #3b3a3a;
+  }
 
-.infoImg{
-  display: none;
-}
+  .infoImg {
+    display: none;
+  }
 
-
-   .info-container {
+  .info-container {
     padding-left: 5vw;
     padding-right: 5vw;
     margin-top: 1rem;
@@ -760,67 +740,62 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   }
 
   .info-image-row {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 0.2rem;
-  flex-wrap: nowrap;
-  border-bottom: 1px solid rgb(230, 227, 227);
-}
-
-
-.overlay-text {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  color: #ffffff !important;
-
-  font-weight: 500;
-  font-family: 'Inter', sans-serif; 
-  text-align: center;
-  line-height: 1.1;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); 
-}
-.overlay-text p{
-  font-size: 0.9rem;
-}
-
-.image-hover-card img {
-  display: block;
-  height: 150px;
-  width: auto;
-  border-radius: 20px;
-  transition: transform 0.4s ease;
-}
-
-  .contact-container {
-    flex-direction: column; 
-    padding: 60px 5vw;      
-    gap: 2rem;              
-
-     align-items: center; 
-  border-radius: 100px 100px 0 0;
-  
-    background-color: #ffffff;
-background-image: url("https://www.transparenttextures.com/patterns/hexellence.png");
-  
-
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.2rem;
+    flex-wrap: nowrap;
+    border-bottom: 1px solid rgb(230, 227, 227);
   }
 
-  
+  .overlay-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    color: #ffffff !important;
+
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    line-height: 1.1;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  }
+  .overlay-text p {
+    font-size: 0.9rem;
+  }
+
+  .image-hover-card img {
+    display: block;
+    height: 150px;
+    width: auto;
+    border-radius: 20px;
+    transition: transform 0.4s ease;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    padding: 60px 5vw;
+    gap: 2rem;
+
+    align-items: center;
+    border-radius: 100px 100px 0 0;
+
+    background-color: #ffffff;
+    background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
+  }
 
   .contact-left,
   .contact-right {
-    flex: none;            
-    width: 100%;            
-    min-width: auto;        
+    flex: none;
+    width: 100%;
+    min-width: auto;
   }
 
   .contact-title {
@@ -828,14 +803,14 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   }
 
   .contact-description {
-    font-size: 1rem;        
-    max-width: 100%;        
+    font-size: 1rem;
+    max-width: 100%;
     margin-bottom: 20px;
     line-height: 1.5;
   }
 
   .contact-info {
-    font-size: 0.9rem;      
+    font-size: 0.9rem;
   }
 
   .contact-info li {
@@ -843,14 +818,14 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   }
 
   .contact-right {
-    justify-content: center; 
-    margin-top: 20px;        
+    justify-content: center;
+    margin-top: 20px;
   }
 
   .contact-right img {
-    max-width: 100%;        
+    max-width: 100%;
     height: 220px;
-    object-fit: contain;    
+    object-fit: contain;
     border-radius: 10px;
     position: relative;
     left: 80px;
@@ -858,9 +833,9 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   }
 
   .info-title {
-  text-align: left;
-  width: 100%;
-}
+    text-align: left;
+    width: 100%;
+  }
 
   .info-content {
     flex-direction: column;
@@ -885,7 +860,6 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   .info-text p {
     top: -30px;
     margin-bottom: 0;
-   
   }
 
   .info-skills {
@@ -896,45 +870,39 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
     gap: 1.5rem;
   }
 
+  .header-container {
+    position: relative;
+    width: 100vw;
+    height: 216px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+  }
 
-.header-container {
-  position: relative;
-  width: 100vw;
-  height: 216px;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  
-}
+  .header-content {
+    display: none;
+  }
 
-.header-content {
-  display: none;
-}
+  .header-mobile-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-.header-mobile-content {
-  display: flex;
-  justify-content:center;    
-  align-items: center;         
-  flex-direction: column;
-             
-  padding: 2rem;              
-    border-radius: 0 0 120px 120px ;
-  background-color: #fffdfd;
-}
+    padding: 2rem;
+    border-radius: 0 0 120px 120px;
+    background-color: #fffdfd;
+  }
 
+  .home-paragraph {
+    padding: 0.5rem;
+    font-weight: 900;
+    margin: 0;
+    max-width: 280px;
+    font-size: 1.3rem !important;
+    color: #3b3a3a;
+  }
 
-.home-paragraph {
-  padding: 0.5rem;
-  font-weight: 900;
-  margin: 0;     
-  max-width: 280px;   
-  font-size: 1.3rem !important; 
-  color: #3b3a3a;
-            
-}
-
- 
- 
   .cv-download-button {
     width: 120px;
     padding: 8px 8px;
@@ -972,45 +940,40 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   }
 
   /* Dropdown menu */
-.dropdown-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 55vh;
-  background: #111111;
-  z-index: 1000;
-  overflow-y: auto;
-  padding-top: 60px;
-  transform: translateY(100%);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
+  .dropdown-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55vh;
+    background: #111111;
+    z-index: 1000;
+    overflow-y: auto;
+    padding-top: 60px;
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
 
-.dropdown-menu.open {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
+  .dropdown-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-.dropdown-close-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1101;
-}
+  .dropdown-close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1101;
+  }
 
-
-.hamburger-button {
-  width: 32px;
-  height: 32px;
-  cursor: pointer; 
-  
-}
-
-
-
+  .hamburger-button {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
 
   .main-links-mobile,
   .favicons-mobile {
@@ -1026,126 +989,117 @@ background-image: url("https://www.transparenttextures.com/patterns/hexellence.p
   }
 
   .main-links-mobile a {
-     display: inline-block; 
-    width: 100%;          
+    display: inline-block;
+    width: 100%;
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
   }
 
   .favicons-mobile {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  border-top: 1px solid white;
-  background: rgb(0, 0, 0); 
-  padding: 0.7rem 0;
-  z-index: 1000; 
-}
-
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    border-top: 1px solid white;
+    background: rgb(0, 0, 0);
+    padding: 0.7rem 0;
+    z-index: 1000;
+  }
 
   .favicons-mobile a {
     font-size: 1.8rem;
     color: white;
   }
 
-  
-
   .projects-title {
-  font-weight: 700;
-  margin-bottom: 0px;
+    font-weight: 700;
+    margin-bottom: 0px;
+  }
+
+  .logo img {
+    padding: 4px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .background-decor {
+    position: absolute;
+    top: 0;
+    left: -1.5rem;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .background-decor .circle,
+  .background-decor .square {
+    position: absolute;
+    opacity: 0.14;
+    animation: float 10s infinite ease-in-out;
+  }
+
+  /* Circles */
+  .background-decor .circle {
+    border-radius: 50%;
+    background: #000000;
+  }
+
+  .circle-1 {
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 10%;
+  }
+
+  .circle-2 {
+    width: 100px;
+    height: 100px;
+    bottom: 10%;
+    right: 5%;
+  }
+
+  /* Squares */
+  .background-decor .square {
+    background: #ff6f61;
+  }
+
+  .square-1 {
+    width: 80px;
+    height: 60px;
+    top: 49%;
+    right: 5%;
+  }
+
+  /* Simple floating animation */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+    50% {
+      transform: translateY(-30px) rotate(20deg);
+    }
+  }
 }
 
-
-.logo img {
-  padding: 4px;           
-  width: 35px;             
-  height: 35px;
-  
+.realistic-marker-highlight {
+  position: relative;
 }
-
-.background-decor {
-  position: absolute;
-  top: 0;
-  left: -1.5rem;
+.realistic-marker-highlight:before {
+  content: '';
+  background-color: #ff6db7;
   width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.background-decor .circle,
-.background-decor .square {
+  height: 1em;
   position: absolute;
-  opacity: 0.14;
-  animation: float 10s infinite ease-in-out;
+  z-index: -1;
+  filter: url(#marker-shape);
+  left: -0.25em;
+  top: 0.1em;
+  padding: 0 0.25em;
 }
-
-/* Circles */
-.background-decor .circle {
-  border-radius: 50%;
-  background: #000000;
-}
-
-.circle-1 {
-  width: 80px;
-  height: 80px;
-  top: 50%;
-  left: 10%;
-}
-
-.circle-2 {
-  width: 100px;
-  height: 100px;
-  bottom: 10%;
-  right: 5%;
-}
-
-/* Squares */
-.background-decor .square {
-  background: #ff6f61;
-}
-
-.square-1 {
-  width: 80px;
-  height: 60px;
-  top: 49%;
-  right: 5%;
-}
-
-/* Simple floating animation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(0);
-  }
-  50% {
-    transform: translateY(-30px) rotate(20deg);
-  }
-}
-
-
-}
-
-
-
-.realistic-marker-highlight{
-  position:relative;
-}
-.realistic-marker-highlight:before{
-  content:"";
-  background-color:#ff6db7;
-  width:100%;
-  height:1em;
-  position:absolute;
-  z-index:-1;
-  filter:url(#marker-shape);
-  left:-0.25em;
-  top:0.1em;
-  padding:0 0.25em;
-}
-

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaGithub, FaEnvelope, FaLinkedin } from 'react-icons/fa';
-import listSvg from "../assets/list.svg";
+import listSvg from '../assets/list.svg';
 import DropdownMenu from './DropDownMenu';
 
 function Navbar() {
@@ -35,14 +35,24 @@ function Navbar() {
       {/* Αυτά κρύβονται σε κινητό */}
       <div className="nav-links">
         <ul className="main-links">
-          <li><a href="#about">about</a></li>
-          <li><a href="#projects">projects</a></li>
-          <li><a href="#contact">contact</a></li>
+          <li>
+            <a href="#about">about</a>
+          </li>
+          <li>
+            <a href="#projects">projects</a>
+          </li>
+          <li>
+            <a href="#contact">contact</a>
+          </li>
         </ul>
 
         <ul className="favicons">
           <li>
-            <a href="https://github.com/ChrKatsaros" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/ChrKatsaros"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaGithub />
             </a>
           </li>
