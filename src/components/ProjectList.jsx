@@ -2,6 +2,7 @@ import voileIMG from '../assets/voile.png';
 import calcwiseIMG from '../assets/calcwise.png';
 import iNotesIMG from '../assets/inotesapp.png';
 import cremeandcrumbs from '../assets/cremeandcrumbs.png';
+import nocteIMG from '../assets/nocte.png';
 const projects = [
   {
     title: 'Voile',
@@ -10,6 +11,14 @@ const projects = [
       'A stylish perfume e-shop built with React, featuring a smooth user interface and a seamless shopping experience. Designed with responsive and modern aesthetics.',
     link: 'https://voile-store-project.onrender.com/',
   },
+  {
+    title: 'Nocté',
+    image: nocteIMG,
+    description:
+      'A sleek and modern frontend landing page for an eyewear store, dynamically fetching products from a Supabase database. Designed with React for a clean, responsive, and seamless user experience.',
+    link: 'https://nocte.onrender.com/',
+  },
+
   {
     title: 'Crème & Crumbs',
     image: cremeandcrumbs,
